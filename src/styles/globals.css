@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-p-12 pt-12 font-sans;
+  }
+  body {
+    @apply bg-black text-[darkgray];
+  }
+}
