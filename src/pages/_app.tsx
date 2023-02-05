@@ -1,6 +1,6 @@
 import { type AppType } from "next/dist/shared/lib/utils";
 import Head from "next/head";
-import "styles/globals.css";
+import "styles/globals.scss";
 
 const MyApp: AppType = ({ Component, pageProps }) => (
   <>
