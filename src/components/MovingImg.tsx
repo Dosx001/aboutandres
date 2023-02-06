@@ -28,35 +28,30 @@ const MovingImg = ({ delay }: { delay: number }) => {
     return () => clearTimeout(id);
   });
   const getDirection = () => {
-    const pos = random(70);
+    const pos = `${random(70)}%`;
+    const ani = `infinite ${delay}s linear`;
     switch (random(4)) {
       case 0:
-        return { top: `${pos}%`, animation: `left infinite ${delay}s linear` };
+        return { top: pos, animation: `left ${ani}` };
       case 1:
-        return { top: `${pos}%`, animation: `right infinite ${delay}s linear` };
+        return { top: pos, animation: `right ${ani}` };
       case 2:
-        return { left: `${pos}%`, animation: `top infinite ${delay}s linear` };
+        return { left: pos, animation: `top ${ani}` };
       default:
-        return {
-          left: `${pos}%`,
-          animation: `bottom infinite ${delay}s linear`,
-        };
+        return { left: pos, animation: `bottom ${ani}` };
     }
   };
-  const createElement = () => {
-    return (
-      <Image
-        className="move"
-        style={getDirection()}
-        loader={({ src, width }) => `${src}?w=${width}`}
-        src={imgs[num]!}
-        alt="gif"
-        width={500}
-        height={500}
-      />
-    );
-  };
-  return createElement();
+  return (
+    <Image
+      className="absolute z-0 shadow-box"
+      style={getDirection()}
+      loader={({ src, width }) => `${src}?w=${width}`}
+      src={imgs[num]!}
+      alt="gif"
+      width={500}
+      height={500}
+    />
+  );
 };
 
 export default MovingImg;
