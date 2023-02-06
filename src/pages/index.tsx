@@ -1,47 +1,29 @@
+import MovingImg from "components/MovingImg";
 import { type NextPage } from "next";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
     <>
       <div>
-        <h1>Personal Projects</h1>
-        <div>
-          <a href="https://anical.vercel.app/">AniCal</a>
+        <MovingImg delay={5} />
+        <MovingImg delay={6} />
+        <MovingImg delay={7} />
+        <MovingImg delay={8} />
+        <div className="box absolute z-10">
+          <h1 className="mx-auto text-6xl font-bold text-white xl:text-8xl">
+            Hello! I&apos;m Andres Rodriguez Michel. I&apos;m a software
+            engineer!
+          </h1>
+          <Image
+            className="rounded-full mx-auto pt-4"
+            loader={({ src, width }) => `${src}?w=${width}`}
+            src="https://avatars.githubusercontent.com/u/62494922"
+            alt="Picture of the author"
+            width={400}
+            height={400}
+          />
         </div>
-        <div>
-          <a href="https://addons.mozilla.org/en-US/firefox/addon/mouselessv2/">
-            mouselessv2
-          </a>
-        </div>
-        <div>
-          <a href="https://addons.mozilla.org/en-US/firefox/addon/manualcodeinjector/">
-            Manual Code Injector
-          </a>
-        </div>
-        <div>
-          <a href="https://addons.mozilla.org/en-US/firefox/addon/youtubeutils/">
-            YouTubeUtils
-          </a>
-        </div>
-        <div>
-          <a href="https://github.com/Dosx001/GitPrompt">GitPrompt</a>
-        </div>
-        <div>
-          <a href="https://github.com/Dosx001/vim-template">vim-template</a>
-        </div>
-        <div>
-          <a href="https://github.com/Dosx001/statusline.vim">statusline.vim</a>
-        </div>
-        <div>
-          <a href="https://github.com/Dosx001/cmp-commit">cmp-commit</a>
-        </div>
-      </div>
-      <div>
-        <h1>Interests</h1>
-        <div>Programming</div>
-        <div>Linux</div>
-        <div>Vim</div>
-        <div>Anime</div>
       </div>
     </>
   );

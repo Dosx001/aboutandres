@@ -4,45 +4,34 @@
 
 @layer base {
   html {
-    @apply overflow-y-hidden font-sans;
-  }
-  body {
-    @apply bg-black text-[darkgray];
+    @apply overflow-y-hidden bg-[red] font-sans text-[darkgray];
+    animation: color infinite 8s ease;
   }
 }
-
-$directions: "left", "right", "top", "bottom";
-@each $dir in $directions {
-  @keyframes #{$dir} {
+@layer utilities {
+  .move {
+    @apply absolute z-0;
+    box-shadow: 10px 10px 15px black;
+  }
+}
+@each $direction in "left", "right", "top", "bottom" {
+  @keyframes #{$direction} {
     from {
-      #{$dir}: 0;
+      #{$direction}: -25%;
     }
     to {
-      #{$dir}: 100%;
+      #{$direction}: 100%;
     }
   }
-  .#{$dir} {
-    position: absolute;
-    box-shadow: 10px 10px 15px black;
-    z-index: 0;
-    animation: #{$dir} infinite 5s linear;
-  }
 }
-
 @keyframes color {
   0% {
     background-color: red;
   }
   50% {
-    background-color: yellow;
+    background-color: blue;
   }
   100% {
     background-color: red;
   }
-}
-
-/* The element to apply the animation to */
-body {
-  background-color: red;
-  animation: color infinite 8s ease;
 }
