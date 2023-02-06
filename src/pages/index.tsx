@@ -16,7 +16,7 @@ const Home: NextPage = () => {
             engineer!
           </h1>
           <Image
-            className="rounded-full mx-auto pt-4"
+            className="mx-auto rounded-full pt-4"
             loader={({ src, width }) => `${src}?w=${width}`}
             src="https://avatars.githubusercontent.com/u/62494922"
             alt="Picture of the author"

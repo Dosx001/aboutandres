@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply overflow-y-hidden bg-[red] font-sans text-[darkgray];
+    @apply overflow-y-hidden bg-[red] bg-[url('https://openclipart.org/image/800px/296687')] font-sans text-[darkgray];
     animation: color infinite 8s ease;
   }
 }
@@ -12,6 +12,9 @@
   .move {
     @apply absolute z-0;
     box-shadow: 10px 10px 15px black;
+  }
+  .box {
+    @apply mx-auto w-11/12 md:w-3/4 3xl:w-1/2;
   }
 }
 @each $direction in "left", "right", "top", "bottom" {

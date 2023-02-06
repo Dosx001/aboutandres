@@ -12,7 +12,7 @@ const MyApp: AppType = ({ Component, pageProps }) => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className="mx-auto w-11/12 md:w-3/4 3xl:w-1/2">
+    <main className="box">
       <Component {...pageProps} />
     </main>
   </>
