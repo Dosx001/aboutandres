@@ -1,12 +1,13 @@
 import MovingImg from "components/MovingImg";
+import Work from "components/Work";
 import { type NextPage } from "next";
 import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
     <>
-      <div className="color absolute left-0 h-full w-full"></div>
-      <div className="absolute left-0 h-full w-full bg-[url('https://cdn.pixabay.com/photo/2018/02/18/20/29/computer-3163437_960_720.png')]"></div>
+      <div className="color absolute left-0 h-full w-screen"></div>
+      <div className="absolute left-0 h-full w-screen bg-[url('https://cdn.pixabay.com/photo/2018/02/18/20/29/computer-3163437_960_720.png')]"></div>
       <MovingImg delay={5} />
       <MovingImg delay={6} />
       <MovingImg delay={7} />
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
           height={400}
         />
       </div>
+      <Work />
     </>
   );
 };

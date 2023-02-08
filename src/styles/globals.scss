@@ -12,6 +12,11 @@
     @apply mx-auto w-11/12 md:w-3/4 3xl:w-1/2;
   }
 }
+ul {
+  list-style: disc;
+  margin: 0 0 0 1.5rem;
+  padding: 0;
+}
 @each $direction in "left", "right", "top", "bottom" {
   @keyframes #{$direction} {
     from {

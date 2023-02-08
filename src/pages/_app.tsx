@@ -10,6 +10,10 @@ const MyApp: AppType = ({ Component, pageProps }) => (
         name="description"
         content="Personal site about Anders Rodriguez Michel"
       />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main className="box">
