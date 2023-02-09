@@ -16,7 +16,7 @@ const MyApp: AppType = ({ Component, pageProps }) => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className="box">
+    <main className="">
       <Component {...pageProps} />
     </main>
   </>
