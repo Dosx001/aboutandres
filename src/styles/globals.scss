@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply overflow-x-hidden font-sans text-[darkgray];
+    @apply overflow-hidden font-sans text-[darkgray];
   }
 }
 @layer utilities {
