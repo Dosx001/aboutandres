@@ -46,9 +46,13 @@ const Work = () => {
     },
   ];
   return (
-    <div className="absolute left-0 mt-[100vh] h-full min-h-fit w-screen bg-[#00008e]">
-      <div className="box">
-        <h1 className="text-center text-4xl">Work Experience</h1>
+    <div className="absolute left-0 mt-[100vh] h-full min-h-fit w-screen bg-gradient-to-t from-[navy] to-black">
+      <div className="star absolute left-0 h-full w-[200vw]">
+        <div className="inline-block h-full w-screen bg-[url('http://www.script-tutorials.com/demos/360/images/stars.png')]" />
+        <div className="inline-block h-full w-screen bg-[url('http://www.script-tutorials.com/demos/360/images/stars.png')]" />
+      </div>
+      <div className="box relative z-10">
+        <h1 className="mt-4 text-center text-4xl">Work Experience</h1>
         <div className="mx-auto mt-1 h-[80vh] w-11/12 rounded bg-gray-600 p-1">
           <div className="flex justify-evenly">
             <button

@@ -47,3 +47,14 @@ ul {
     background-position: 0% 50%;
   }
 }
+.star {
+  animation: star 15s linear infinite;
+}
+@keyframes star {
+  to {
+    transform: translate(-100vw);
+  }
+  from {
+    transform: translate(0);
+  }
+}
