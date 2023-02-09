@@ -1,3 +1,4 @@
+import NavBar from "components/NavBar";
 import { type AppType } from "next/dist/shared/lib/utils";
 import Head from "next/head";
 import "styles/globals.scss";
@@ -19,6 +20,7 @@ const MyApp: AppType = ({ Component, pageProps }) => (
     <main className="">
       <Component {...pageProps} />
     </main>
+    <NavBar />
   </>
 );
 export default MyApp;
