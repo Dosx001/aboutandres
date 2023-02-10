@@ -21,7 +21,7 @@ const NavBar = () => {
     },
   ];
   return (
-    <div className="textshadow fixed bottom-0 mb-1 flex w-full justify-evenly text-2xl text-white">
+    <div className="textshadow fixed bottom-0 z-50 mb-1 flex w-full justify-evenly text-2xl text-white">
       {links.map((link, index) => (
         <Link
           href={link.path}

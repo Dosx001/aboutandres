@@ -58,3 +58,26 @@ ul {
     transform: translate(0);
   }
 }
+$mint: #65ff78;
+.ripple {
+  background-color: $mint;
+  height: 1rem;
+  border-radius: 50%;
+  animation: ripple 1s linear infinite;
+}
+@keyframes ripple {
+  from {
+    box-shadow: 0 0 0 0 rgba($mint, 0.3), 0 0 0 1rem rgba($mint, 0.3),
+      0 0 0 3rem rgba($mint, 0.3), 0 0 0 6rem rgba($mint, 0.3),
+      0 0 0 9rem rgba($mint, 0.3), 0 0 0 12rem rgba($mint, 0.3),
+      0 0 0 15rem rgba($mint, 0.3), 0 0 0 18rem rgba($mint, 0.3),
+      0 0 0 21rem rgba($mint, 0.3), 0 0 0 24rem rgba($mint, 0.3);
+  }
+  to {
+    box-shadow: 0 0 0 1rem rgba($mint, 0.3), 0 0 0 3rem rgba($mint, 0.3),
+      0 0 0 6rem rgba($mint, 0.3), 0 0 0 9rem rgba($mint, 0.3),
+      0 0 0 12rem rgba($mint, 0.3), 0 0 0 15rem rgba($mint, 0.3),
+      0 0 0 18rem rgba($mint, 0.3), 0 0 0 21rem rgba($mint, 0.3),
+      0 0 0 24rem rgba($mint, 0.3), 0 0 0 27rem rgba($mint, 0);
+  }
+}
