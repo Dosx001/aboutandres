@@ -43,7 +43,7 @@ const MovingImg = ({ delay }: { delay: number }) => {
   };
   return (
     <Image
-      className="absolute z-0 shadow-box"
+      className="absolute z-0 bg-black shadow-box"
       style={getDirection()}
       loader={({ src, width }) => `${src}?w=${width}`}
       src={imgs[num]!}
