@@ -81,14 +81,18 @@ $mint: #65ff78;
       0 0 0 24rem rgba($mint, 0.3), 0 0 0 27rem rgba($mint, 0);
   }
 }
-.glow {
-  animation: glow 2s ease-in-out infinite alternate;
-}
-@keyframes glow {
-  from {
-    filter: drop-shadow(0 0 20px #fff);
+@each $color in red, orange, yellow, green, blue, indigo, violet {
+  .glow-#{$color} {
+    animation: glow-#{$color} 3s ease-in-out infinite alternate;
   }
-  to {
-    filter: drop-shadow(0 0 40px #fff);
+  @keyframes glow-#{$color} {
+    from {
+      filter: drop-shadow(0 0 20px $color);
+      opacity: .8;
+    }
+    to {
+      filter: drop-shadow(0 0 40px $color);
+      opacity: 1;
+    }
   }
 }
