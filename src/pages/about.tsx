@@ -19,6 +19,12 @@ const About = () => {
       <circle cx="5" cy="5" r="4" />
     </svg>
   );
+  const saturn = (
+    <svg viewBox="0 0 30 20" className="glow-blue fill-[blue]">
+      <circle cx="15" cy="10" r="9" />
+      <ellipse cx="15" cy="10" rx="15" ry="3" />
+    </svg>
+  );
   return (
     <>
       <div className="absolute h-screen w-screen bg-black" />
@@ -28,6 +34,7 @@ const About = () => {
           {star}
           {star4}
           {moon}
+          {saturn}
         </div>
       </div>
     </>
