@@ -88,7 +88,7 @@ $mint: #65ff78;
   @keyframes glow-#{$color} {
     from {
       filter: drop-shadow(0 0 20px $color);
-      opacity: .7;
+      opacity: 0.7;
     }
     to {
       filter: drop-shadow(0 0 40px $color);
