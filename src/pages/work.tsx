@@ -1,3 +1,4 @@
+import ImgSlider from "components/ImgSlider";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -37,7 +38,7 @@ const Work = () => {
     },
     {
       imgs: [
-        "https://www.baesystems.com/en-media/webImage/20210706095016/1434667302689.jpg",
+        "https://ssgse.com/ssg/wp-content/uploads/SSG-CalPoly-CampusMktUU-1-1024x617.jpg",
       ],
       txt: [
         "Worked in fast-paced dynamic environment by role switching in critical moments",
@@ -78,15 +79,7 @@ const Work = () => {
             </button>
           </div>
           <div className="block w-full pt-1 md:flex">
-            <div>
-              <Image
-                loader={({ src, width }) => `${src}?w=${width}`}
-                src="https://www.baesystems.com/en-media/webImage/20210706095016/1434667302689.jpg"
-                alt="AMPV"
-                width={400}
-                height={400}
-              />
-            </div>
+            <ImgSlider imgs={info[x]!.imgs} />
             <div className="float-left">
               <ul>
                 {info[x]!.txt.map((t, i) => (
