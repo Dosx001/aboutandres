@@ -28,40 +28,38 @@ const Work = () => {
     },
   ];
   return (
-    <div className="h-screen w-screen bg-gradient-to-t from-[navy] to-black">
-      <div className="star absolute left-0 h-full w-[200vw]">
+    <div className="h-screen w-screen bg-gradient-to-t from-[navy] to-black text-white">
+      <div className="star absolute h-full w-[200vw]">
         <div className="inline-block h-full w-screen bg-[url('http://www.script-tutorials.com/demos/360/images/stars.png')]" />
         <div className="inline-block h-full w-screen bg-[url('http://www.script-tutorials.com/demos/360/images/stars.png')]" />
       </div>
-      <div className="box relative z-10">
-        <h1 className="pt-4 text-center text-4xl">Work Experience</h1>
-        <div className="mx-auto mt-1 h-[80vh] w-11/12 rounded bg-gray-600 p-1">
-          <table className="">
-            {jobs.map((job) => (
-              <tr key={job.company}>
-                <td className="whitespace-nowrap px-4 text-center">
-                  <div className="border-b-2 border-[navy]">{job.start}</div>
-                  <div>{job.end}</div>
-                </td>
-                <td className="w-32 border-l-2 border-[navy]">
-                  <Image
-                    loader={({ src, width }) => `${src}?w=${width}`}
-                    src={job.logo}
-                    alt=""
-                    width={100}
-                    height={100}
-                    className="my-2 ml-2 border border-[navy]"
-                  />
-                </td>
-                <td className="">
-                  <h2 className="text-2xl text-white">{job.company}</h2>
-                  <div className="text-[navy]">{job.positon}</div>
-                  <div>{job.location}</div>
-                </td>
-              </tr>
-            ))}
-          </table>
-        </div>
+      <h1 className="pt-4 text-center text-4xl">Work Experience</h1>
+      <div className="relative mt-1 flex h-[80vh] justify-center overflow-y-auto">
+        <table>
+          {jobs.map((job) => (
+            <tr key={job.company}>
+              <td className="whitespace-nowrap px-4 text-center">
+                <div className="border-b-2">{job.start}</div>
+                <div>{job.end}</div>
+              </td>
+              <td className="w-32 border-l-2">
+                <Image
+                  loader={({ src, width }) => `${src}?w=${width}`}
+                  src={job.logo}
+                  alt=""
+                  width={100}
+                  height={100}
+                  className="my-2 ml-2 border opacity-90"
+                />
+              </td>
+              <td>
+                <h2 className="text-2xl text-white">{job.company}</h2>
+                <div className="text-blue-300">{job.positon}</div>
+                <div className="text-gray-400">{job.location}</div>
+              </td>
+            </tr>
+          ))}
+        </table>
       </div>
     </div>
   );

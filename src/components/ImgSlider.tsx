@@ -43,7 +43,7 @@ const ImgSlider = ({ imgs }: { imgs: string[] }) => {
                   alt=""
                   width={400}
                   height={400}
-                  className="mx-auto w-96"
+                  className="mx-auto w-96 opacity-50"
                 />
               )
           )}
