@@ -5,7 +5,7 @@ const Work = () => {
     {
       company: "BAE Systems",
       positon: "Software Engineer",
-      location: "San Jose",
+      location: "San Jose, CA",
       start: "Jan 2022",
       end: "Present",
       logo: "https://www.rbsscaffolding.co.uk/wp-content/uploads/2017/08/BAE-Systems-Logo-600px-280x280.png",
@@ -13,15 +13,15 @@ const Work = () => {
     {
       company: "BEACON",
       positon: "Laboratory Assistant",
-      location: "San Luis Obispo",
-      start: "Jan 2017",
+      location: "San Luis Obispo, CA",
+      start: "Jun 2017",
       end: "Aug 2020",
       logo: "https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/7/120451/files/2021/07/BEACON-logo-v3-transparent.png",
     },
     {
       company: "Cal Poly Campus Dining",
       positon: "Student Assistant",
-      location: "San Luis Obispo",
+      location: "San Luis Obispo, CA",
       start: "Sept 2016",
       end: "Mar 2017",
       logo: "https://res.cloudinary.com/doa6grfya/image/upload/v1519824006/lclnzs6ibymktn0lvn9f.jpg",
@@ -39,8 +39,8 @@ const Work = () => {
           {jobs.map((job) => (
             <tr key={job.company}>
               <td className="whitespace-nowrap px-4 text-center">
-                <div className="border-b-2">{job.start}</div>
-                <div>{job.end}</div>
+                <div className="border-b-2">{job.end}</div>
+                <div>{job.start}</div>
               </td>
               <td className="w-32 border-l-2">
                 <Image
