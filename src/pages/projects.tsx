@@ -107,14 +107,18 @@ const Projects = () => {
       <div className="absolute h-1/2 w-full bg-black"></div>
       <div className="absolute mt-[50vh] h-1/2 w-full bg-gray-500"></div>
       <div className="ripple absolute z-10 mt-[50vh] w-full"></div>
-      <div className="box relative z-20">
-        <h1 className="pt-4 text-center text-4xl text-white">
+      <div className="box relative z-20 text-white">
+        <motion.h1
+          className="pt-4 text-center text-4xl"
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+        >
           Personal Projects
-        </h1>
+        </motion.h1>
         <div className="flex justify-between overflow-x-auto whitespace-nowrap">
           {projs.map((proj, i) => (
             <motion.button
-              className="mx-1 my-2 rounded bg-gray-500 py-1 px-2 text-white"
+              className="mx-1 my-2 rounded bg-gray-500 py-1 px-2"
               key={proj}
               onClick={() => setName(proj)}
               initial={{ x: 200, opacity: 0 }}
@@ -125,7 +129,7 @@ const Projects = () => {
             </motion.button>
           ))}
         </div>
-        <div className="text-white">{content(name)}</div>
+        <div>{content(name)}</div>
       </div>
     </>
   );
