@@ -45,39 +45,35 @@ const MusicVisualizer = () => {
   const next = () => setTrack(track === tracks.length - 1 ? 0 : track + 1);
   return (
     <div className="fixed bottom-10">
-      <div>
-        <canvas ref={canvasRef} />
-        <div className="flex w-96 rounded shadow shadow-black">
-          <button
-            className="bg-[#2e2e2e] pl-3 hover:cursor-default"
-            onClick={() =>
-              setTrack(track === 0 ? tracks.length - 1 : track - 1)
-            }
+      <canvas ref={canvasRef} />
+      <div className="flex w-96 rounded shadow shadow-black">
+        <button
+          className="bg-[#2e2e2e] pl-3 hover:cursor-default"
+          onClick={() => setTrack(track === 0 ? tracks.length - 1 : track - 1)}
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 12 12"
+            className="fill-white hover:fill-[#00b6f0]"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 12 12"
-              className="fill-white hover:fill-[#00b6f0]"
-            >
-              <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
-            </svg>
-          </button>
-          <button
-            className="bg-[#2e2e2e] pl-3 hover:cursor-default"
-            onClick={next}
+            <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
+          </svg>
+        </button>
+        <button
+          className="bg-[#2e2e2e] pl-3 hover:cursor-default"
+          onClick={next}
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 12 12"
+            className="rotate-180 fill-white hover:fill-[#00b6f0]"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 12 12"
-              className="rotate-180 fill-white hover:fill-[#00b6f0]"
-            >
-              <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
-            </svg>
-          </button>
-          <audio controls ref={audioRef} className="w-96" onEnded={next} />
-        </div>
+            <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
+          </svg>
+        </button>
+        <audio controls ref={audioRef} className="w-96" onEnded={next} />
       </div>
     </div>
   );
