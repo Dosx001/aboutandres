@@ -42,6 +42,7 @@ const MusicVisualizer = () => {
       setAudioContext(new AudioContext());
     };
   }, [track]);
+  const next = () => setTrack(track === tracks.length - 1 ? 0 : track + 1);
   return (
     <div className="fixed bottom-10">
       <div>
@@ -64,9 +65,7 @@ const MusicVisualizer = () => {
           </button>
           <button
             className="bg-[#2e2e2e] pl-3 hover:cursor-default"
-            onClick={() =>
-              setTrack(track === tracks.length - 1 ? 0 : track + 1)
-            }
+            onClick={next}
           >
             <svg
               width="20"
@@ -77,7 +76,7 @@ const MusicVisualizer = () => {
               <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
             </svg>
           </button>
-          <audio controls ref={audioRef} className="w-96" />
+          <audio controls ref={audioRef} className="w-96" onEnded={next} />
         </div>
       </div>
     </div>
