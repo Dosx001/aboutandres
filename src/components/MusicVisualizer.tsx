@@ -59,7 +59,7 @@ const MusicVisualizer = () => {
           </button>
           <audio
             controls
-            src="Count What You Have Now.mp3"
+            src="music/Count What You Have Now.mp3"
             ref={audioRef}
             className="w-96"
           />
