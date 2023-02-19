@@ -10,10 +10,9 @@ const MusicVisualizer = () => {
     const ctx = canvas.getContext("2d")!;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    const sourceNode = audioContext.createMediaElementSource(audio);
     const analyserNode = audioContext.createAnalyser();
     analyserNode.fftSize = 256;
-    sourceNode.connect(analyserNode);
+    audioContext.createMediaElementSource(audio).connect(analyserNode);
     analyserNode.connect(audioContext.destination);
     const frequencyData = new Uint8Array(analyserNode.frequencyBinCount);
     const renderFrame = () => {
@@ -29,10 +28,8 @@ const MusicVisualizer = () => {
     audio.play().catch((err) => console.debug(err));
     renderFrame();
     return () => {
-      if (audioContext) {
-        audioContext.close().catch((err) => console.debug(err));
-        setAudioContext(new AudioContext());
-      }
+      audioContext.close().catch((err) => console.debug(err));
+      setAudioContext(new AudioContext());
     };
   }, []);
   return (
