@@ -1,4 +1,5 @@
 import MovingImg from "components/MovingImg";
+import { motion } from "framer-motion";
 import { type NextPage } from "next";
 import Image from "next/image";
 
@@ -12,18 +13,28 @@ const Home: NextPage = () => {
           <MovingImg delay={7} />
           <MovingImg delay={8} />
           <div className="box relative z-10">
-            <h1 className="textshadow mx-auto text-center text-6xl font-bold text-white xl:text-8xl">
+            <motion.h1
+              className="textshadow mx-auto text-center text-6xl font-bold text-white xl:text-8xl"
+              initial={{ y: -100 }}
+              animate={{ y: 0 }}
+            >
               Hello! I&apos;m Andres Rodriguez Michel. I&apos;m a software
               engineer!
-            </h1>
-            <Image
-              className="mx-auto mt-4 rounded-full bg-black shadow-box"
-              loader={({ src, width }) => `${src}?w=${width}`}
-              src="https://avatars.githubusercontent.com/u/62494922"
-              alt="Picture of the author"
-              width={400}
-              height={400}
-            />
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.1 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                className="mx-auto mt-4 rounded-full bg-black shadow-box"
+                loader={({ src, width }) => `${src}?w=${width}`}
+                src="https://avatars.githubusercontent.com/u/62494922"
+                alt="Picture of the author"
+                width={400}
+                height={400}
+              />
+            </motion.div>
           </div>
         </div>
       </div>
