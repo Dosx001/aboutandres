@@ -33,32 +33,39 @@ const MusicVisualizer = () => {
     };
   }, []);
   return (
-    <>
-      <div className="fixed bottom-12">
-        <div>
-          <canvas ref={canvasRef} />
-          <audio ref={audioRef} src="Count What You Have Now.mp3" />
-        </div>
-        <div>
-          <button
-            className="muBtn"
-            onClick={() => {
-              audioContext.resume().catch((err) => console.debug(err));
-            }}
-          >
-            Play
+    <div className="fixed bottom-10">
+      <div>
+        <canvas ref={canvasRef} />
+        <div className="flex w-96 rounded shadow shadow-black">
+          <button className="bg-[#2e2e2e] pl-3 hover:cursor-default">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 12 12"
+              className="fill-white hover:fill-[#00b6f0]"
+            >
+              <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
+            </svg>
           </button>
-          <button
-            className="muBtn"
-            onClick={() => {
-              audioContext.suspend().catch((err) => console.debug(err));
-            }}
-          >
-            Pause
+          <button className="bg-[#2e2e2e] pl-3 hover:cursor-default">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 12 12"
+              className="rotate-180 fill-white hover:fill-[#00b6f0]"
+            >
+              <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
+            </svg>
           </button>
+          <audio
+            controls
+            src="Count What You Have Now.mp3"
+            ref={audioRef}
+            className="w-96"
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
