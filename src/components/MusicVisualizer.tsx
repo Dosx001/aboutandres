@@ -46,9 +46,9 @@ const MusicVisualizer = () => {
   return (
     <div className="fixed bottom-10">
       <canvas ref={canvasRef} />
-      <div className="flex w-96 rounded shadow shadow-black">
+      <div className="flex w-fit whitespace-nowrap rounded-b shadow shadow-black">
         <button
-          className="bg-[#2e2e2e] pl-3 hover:cursor-default"
+          className="rounded-bl bg-[#2e2e2e] pl-3 hover:cursor-default"
           onClick={() => setTrack(track === 0 ? tracks.length - 1 : track - 1)}
         >
           <svg
@@ -73,7 +73,18 @@ const MusicVisualizer = () => {
             <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
           </svg>
         </button>
-        <audio controls ref={audioRef} className="w-96" onEnded={next} />
+        <audio
+          controls
+          ref={audioRef}
+          className="w-[60vw] md:w-[40vw]"
+          onEnded={next}
+        />
+        <button className="bg-[#2e2e2e] pr-3 hover:cursor-default md:pr-0">
+          Track: {track + 1}/{tracks.length}
+        </button>
+        <button className="hidden rounded-br bg-[#2e2e2e] pr-3 hover:cursor-default md:block">
+          &nbsp;| {tracks[track]!}
+        </button>
       </div>
     </div>
   );
