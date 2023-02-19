@@ -14,7 +14,7 @@ const Home: NextPage = () => {
           <MovingImg delay={8} />
           <div className="box relative z-10">
             <motion.h1
-              className="textshadow mx-auto text-center text-6xl font-bold text-white xl:text-8xl"
+              className="textshadow mx-auto text-center text-6xl font-bold xl:text-8xl"
               initial={{ y: -100 }}
               animate={{ y: 0 }}
             >

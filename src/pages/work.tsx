@@ -29,7 +29,7 @@ const Work = () => {
     },
   ];
   return (
-    <div className="h-screen w-screen bg-gradient-to-t from-[navy] to-black text-white">
+    <div className="h-screen w-screen bg-gradient-to-t from-[navy] to-black">
       <div className="star absolute h-full w-[200vw]">
         <div className="inline-block h-full w-screen bg-[url('http://www.script-tutorials.com/demos/360/images/stars.png')]" />
         <div className="inline-block h-full w-screen bg-[url('http://www.script-tutorials.com/demos/360/images/stars.png')]" />
@@ -74,7 +74,7 @@ const Work = () => {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: i * 0.2 }}
               >
-                <h2 className="text-2xl text-white">{job.company}</h2>
+                <h2 className="text-2xl">{job.company}</h2>
                 <div className="text-blue-300">{job.positon}</div>
                 <div className="text-gray-400">{job.location}</div>
               </motion.td>
