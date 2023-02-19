@@ -34,8 +34,30 @@ const MusicVisualizer = () => {
   }, []);
   return (
     <>
-      <canvas className="fixed bottom-0" ref={canvasRef} />
-      <audio ref={audioRef} src="Count What You Have Now.mp3" />
+      <div className="fixed bottom-12">
+        <div>
+          <canvas ref={canvasRef} />
+          <audio ref={audioRef} src="Count What You Have Now.mp3" />
+        </div>
+        <div>
+          <button
+            className="muBtn"
+            onClick={() => {
+              audioContext.resume().catch((err) => console.debug(err));
+            }}
+          >
+            Play
+          </button>
+          <button
+            className="muBtn"
+            onClick={() => {
+              audioContext.suspend().catch((err) => console.debug(err));
+            }}
+          >
+            Pause
+          </button>
+        </div>
+      </div>
     </>
   );
 };
