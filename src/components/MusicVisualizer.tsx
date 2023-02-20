@@ -13,7 +13,7 @@ const MusicVisualizer = () => {
     "Sunset",
   ];
   useEffect(() => {
-    setAudioContext(new AudioContext())
+    setAudioContext(new AudioContext());
     const canvas = canvasRef.current!;
     const audio = audioRef.current!;
     const ctx = canvas.getContext("2d")!;
@@ -80,10 +80,10 @@ const MusicVisualizer = () => {
         <audio
           controls
           ref={audioRef}
-          className="w-[60vw] md:w-[40vw]"
+          className="w-[60vw] md:w-[30vw] lg:w-[35vw] xl:w-[40vw]"
           onEnded={next}
         />
-        <div className="hidden rounded-br bg-[#2e2e2e] pt-2 pr-3 md:block">
+        <div className="hidden w-52 rounded-br bg-[#2e2e2e] pt-2 md:block">
           {tracks[track]!}
         </div>
       </div>
