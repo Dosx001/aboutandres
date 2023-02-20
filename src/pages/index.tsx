@@ -1,4 +1,4 @@
-import MovingImg from "components/MovingImg";
+import MovingGif from "components/MovingGif";
 import { motion } from "framer-motion";
 import { type NextPage } from "next";
 import Image from "next/image";
@@ -8,10 +8,10 @@ const Home: NextPage = () => {
     <>
       <div className="color absolute h-full w-full">
         <div className="left-0 h-full w-screen bg-[url('/home/curuitborad.png')]">
-          <MovingImg delay={5} />
-          <MovingImg delay={6} />
-          <MovingImg delay={7} />
-          <MovingImg delay={8} />
+          <MovingGif delay={5} />
+          <MovingGif delay={6} />
+          <MovingGif delay={7} />
+          <MovingGif delay={8} />
           <div className="box relative z-10">
             <motion.h1
               className="textshadow mx-auto text-center text-6xl font-bold xl:text-8xl"
