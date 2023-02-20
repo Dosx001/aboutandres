@@ -9,7 +9,7 @@ const Work = () => {
       location: "San Jose, CA",
       start: "Jan 2022",
       end: "Present",
-      logo: "https://www.rbsscaffolding.co.uk/wp-content/uploads/2017/08/BAE-Systems-Logo-600px-280x280.png",
+      logo: "bae",
     },
     {
       company: "BEACON",
@@ -17,7 +17,7 @@ const Work = () => {
       location: "San Luis Obispo, CA",
       start: "Jun 2017",
       end: "Aug 2020",
-      logo: "https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/7/120451/files/2021/07/BEACON-logo-v3-transparent.png",
+      logo: "beacon",
     },
     {
       company: "Cal Poly Campus Dining",
@@ -25,14 +25,14 @@ const Work = () => {
       location: "San Luis Obispo, CA",
       start: "Sept 2016",
       end: "Mar 2017",
-      logo: "https://res.cloudinary.com/doa6grfya/image/upload/v1519824006/lclnzs6ibymktn0lvn9f.jpg",
+      logo: "calpoly",
     },
   ];
   return (
     <div className="h-screen w-screen bg-gradient-to-t from-[navy] to-black">
       <div className="star absolute h-full w-[200vw]">
-        <div className="inline-block h-full w-screen bg-[url('http://www.script-tutorials.com/demos/360/images/stars.png')]" />
-        <div className="inline-block h-full w-screen bg-[url('http://www.script-tutorials.com/demos/360/images/stars.png')]" />
+        <div className="inline-block h-full w-screen bg-[url('/work/stars.png')]" />
+        <div className="inline-block h-full w-screen bg-[url('/work/stars.png')]" />
       </div>
       <motion.h1
         className="pt-4 text-center text-4xl"
@@ -62,7 +62,7 @@ const Work = () => {
               >
                 <Image
                   loader={({ src, width }) => `${src}?w=${width}`}
-                  src={job.logo}
+                  src={`work/${job.logo}.png`}
                   alt=""
                   width={100}
                   height={100}
