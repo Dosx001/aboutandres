@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="color absolute h-full w-full">
-        <div className="left-0 h-full w-screen bg-[url('https://cdn.pixabay.com/photo/2018/02/18/20/29/computer-3163437_960_720.png')]">
+        <div className="left-0 h-full w-screen bg-[url('/home/curuitborad.png')]">
           <MovingImg delay={5} />
           <MovingImg delay={6} />
           <MovingImg delay={7} />
