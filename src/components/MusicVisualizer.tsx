@@ -47,13 +47,16 @@ const MusicVisualizer = () => {
     <div className="fixed bottom-10">
       <canvas ref={canvasRef} />
       <div className="flex w-fit whitespace-nowrap rounded-b shadow shadow-black">
+        <div className="bg-[#2e2e2e] pt-2 pl-3 md:pr-0">
+          Track: {track + 1}/{tracks.length}
+        </div>
         <button
-          className="rounded-bl bg-[#2e2e2e] pl-3 hover:cursor-default"
+          className="bg-[#2e2e2e] pl-3 hover:cursor-default"
           onClick={() => setTrack(track === 0 ? tracks.length - 1 : track - 1)}
         >
           <svg
-            width="20"
-            height="20"
+            width="15"
+            height="15"
             viewBox="0 0 12 12"
             className="fill-white hover:fill-[#00b6f0]"
           >
@@ -65,8 +68,8 @@ const MusicVisualizer = () => {
           onClick={next}
         >
           <svg
-            width="20"
-            height="20"
+            width="15"
+            height="15"
             viewBox="0 0 12 12"
             className="rotate-180 fill-white hover:fill-[#00b6f0]"
           >
@@ -79,12 +82,9 @@ const MusicVisualizer = () => {
           className="w-[60vw] md:w-[40vw]"
           onEnded={next}
         />
-        <button className="bg-[#2e2e2e] pr-3 hover:cursor-default md:pr-0">
-          Track: {track + 1}/{tracks.length}
-        </button>
-        <button className="hidden rounded-br bg-[#2e2e2e] pr-3 hover:cursor-default md:block">
-          &nbsp;| {tracks[track]!}
-        </button>
+        <div className="hidden rounded-br bg-[#2e2e2e] pt-2 pr-3 md:block">
+          {tracks[track]!}
+        </div>
       </div>
     </div>
   );
