@@ -13,6 +13,7 @@ const MusicVisualizer = () => {
     "Sunset",
   ];
   useEffect(() => {
+    setAudioContext(new AudioContext())
     const canvas = canvasRef.current!;
     const audio = audioRef.current!;
     const ctx = canvas.getContext("2d")!;
