@@ -1,3 +1,4 @@
+import type { KeyboardEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 
@@ -77,33 +78,54 @@ const MusicVisualizer = () => {
     const secs = Math.floor(seconds % 60);
     return `${Math.floor(seconds / 60)}:${secs < 10 ? `0${secs}` : secs}`;
   };
-  useHotkeys("m", mute);
-  useHotkeys("p", prev);
-  useHotkeys("n", next);
-  useHotkeys("space", play);
-  useHotkeys("up", () => {
+  const up = () => {
     let vol = volume + 0.05;
     if (1 < vol) vol = 1;
     audioRef.current!.volume = vol;
     setVolume(vol);
-  });
-  useHotkeys("down", () => {
+  };
+  const down = () => {
     let vol = volume - 0.05;
     if (vol < 0) vol = 0;
     audioRef.current!.volume = vol;
     setVolume(vol);
-  });
-  useHotkeys("left", () => {
+  };
+  const left = () => {
     let time = currentTime - 5;
     if (time < 0) time = 0;
     audioRef.current!.currentTime = time;
     setCurrentTime(time);
-  });
-  useHotkeys("right", () => {
+  };
+  const right = () => {
     const time = currentTime + 5;
     audioRef.current!.currentTime = time;
     setCurrentTime(time);
-  });
+  };
+  useHotkeys("m", mute);
+  useHotkeys("p", prev);
+  useHotkeys("n", next);
+  useHotkeys("up", up);
+  useHotkeys("down", down);
+  useHotkeys("space", play);
+  useHotkeys("left", left);
+  useHotkeys("right", right);
+  const arrow = (ev: KeyboardEvent): void => {
+    ev.preventDefault();
+    switch (ev.key) {
+      case "ArrowUp":
+        up();
+        break;
+      case "ArrowDown":
+        down();
+        break;
+      case "ArrowLeft":
+        left();
+        break;
+      case "ArrowRight":
+        right();
+        break;
+    }
+  };
   return (
     <div className="fixed bottom-10 w-11/12 whitespace-nowrap md:w-3/4 3xl:w-1/2">
       <audio
@@ -157,6 +179,7 @@ const MusicVisualizer = () => {
             max={1}
             value={volume}
             step={0.01}
+            onKeyDown={arrow}
             onChange={(ev) => {
               const val = Number(ev.target.value);
               audioRef.current!.volume = val;
@@ -190,6 +213,7 @@ const MusicVisualizer = () => {
             max={duration}
             value={currentTime}
             step={0.1}
+            onKeyDown={arrow}
             onChange={(ev) => {
               setCurrentTime(parseFloat(ev.target.value));
               audioRef.current!.currentTime = parseFloat(ev.target.value);
