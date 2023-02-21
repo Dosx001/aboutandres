@@ -118,12 +118,13 @@ const Projects = () => {
         <div className="flex justify-between overflow-x-auto whitespace-nowrap">
           {projs.map((proj, i) => (
             <motion.button
-              className="mx-1 my-2 rounded bg-gray-500 py-1 px-2"
+              className="mx-1 my-2 rounded bg-gray-500 py-1 px-2 hover:animate-pulse"
               key={proj}
               onClick={() => setName(proj)}
               initial={{ x: 200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: i * 0.1 }}
+              style={{ background: proj === name ? "#4bc05a" : "" }}
             >
               {proj}
             </motion.button>
