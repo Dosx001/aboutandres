@@ -78,38 +78,34 @@ const MusicVisualizer = () => {
     const secs = Math.floor(seconds % 60);
     return `${Math.floor(seconds / 60)}:${secs < 10 ? `0${secs}` : secs}`;
   };
-  const up = () => {
-    let vol = volume + 0.05;
+  const volumeCtrl = (vol: number) => {
+    vol += volume;
     if (1 < vol) vol = 1;
+    else if (vol < 0) vol = 0;
     audioRef.current!.volume = vol;
     setVolume(vol);
+    if (vol === 0) setMuted(true);
+    else if (muted) setMuted(false);
   };
-  const down = () => {
-    let vol = volume - 0.05;
-    if (vol < 0) vol = 0;
-    audioRef.current!.volume = vol;
-    setVolume(vol);
-  };
-  const left = () => {
-    let time = currentTime - 5;
+  const timeCtrl = (time: number) => {
+    time += currentTime;
     if (time < 0) time = 0;
     audioRef.current!.currentTime = time;
     setCurrentTime(time);
   };
-  const right = () => {
-    const time = currentTime + 5;
-    audioRef.current!.currentTime = time;
-    setCurrentTime(time);
-  };
+  const up = () => volumeCtrl(0.05);
+  const down = () => volumeCtrl(-0.05);
+  const left = () => timeCtrl(-5);
+  const right = () => timeCtrl(5);
   useHotkeys("m", mute);
   useHotkeys("p", prev);
   useHotkeys("n", next);
   useHotkeys("up", up);
   useHotkeys("down", down);
-  useHotkeys("space", play);
   useHotkeys("left", left);
   useHotkeys("right", right);
-  const arrow = (ev: KeyboardEvent): void => {
+  useHotkeys("space", play);
+  const arrow = (ev: KeyboardEvent) => {
     ev.preventDefault();
     switch (ev.key) {
       case "ArrowUp":
