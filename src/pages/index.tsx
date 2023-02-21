@@ -29,7 +29,7 @@ const Home: NextPage = () => {
               <Image
                 className="mx-auto mt-4 rounded-full bg-black shadow-box"
                 loader={({ src, width }) => `${src}?w=${width}`}
-                src="https://avatars.githubusercontent.com/u/62494922"
+                src="profile.jpg"
                 alt="Picture of the author"
                 width={400}
                 height={400}
