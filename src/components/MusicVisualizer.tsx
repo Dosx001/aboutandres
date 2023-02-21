@@ -138,6 +138,7 @@ const MusicVisualizer = () => {
               audioRef.current!.volume = val;
               setVolume(val);
               if (val === 0) setMuted(true);
+              else if (muted) setMuted(false);
             }}
           />
           <button onClick={mute}>
