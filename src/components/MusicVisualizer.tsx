@@ -120,12 +120,20 @@ const MusicVisualizer = () => {
           Track {track + 1}/{tracks.length} : {tracks[track]!}
         </div>
         <div className="flex">
-          <button className="fill-white hover:fill-[#00b6f0]" onClick={prev}>
+          <button
+            className="fill-white hover:fill-[#00b6f0]"
+            onClick={prev}
+            title="Previous (p)"
+          >
             <svg width="15" height="15" viewBox="0 0 12 12">
               <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
             </svg>
           </button>
-          <button className="fill-white hover:fill-[#00b6f0]" onClick={play}>
+          <button
+            className="fill-white hover:fill-[#00b6f0]"
+            onClick={play}
+            title="Play/Pause (space)"
+          >
             <svg width="25" height="25" viewBox="0 0 20 20">
               {playing ? (
                 <path d="M5 4H7V16H5ZM13 4H15V16H13Z" />
@@ -137,6 +145,7 @@ const MusicVisualizer = () => {
           <button
             className="rotate-180 fill-white hover:fill-[#00b6f0]"
             onClick={next}
+            title="Next (n)"
           >
             <svg width="15" height="15" viewBox="0 0 12 12">
               <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
@@ -144,6 +153,7 @@ const MusicVisualizer = () => {
           </button>
           <input
             className="ml-2 w-20 cursor-pointer"
+            title="Volume (up/down)"
             type="range"
             min={0}
             max={1}
@@ -160,6 +170,7 @@ const MusicVisualizer = () => {
           <button
             className="mx-2 fill-white stroke-white stroke-[4] hover:fill-[#00b6f0] hover:stroke-[#00b6f0]"
             onClick={mute}
+            title="Mute (m)"
           >
             <svg width="25" height="25" viewBox="0 0 75 75">
               <path d="M39.389 13.769L22.235 28.606L6 28.606L6 47.699L21.989 47.699L39.389 62.75L39.389 13.769z" />
@@ -175,6 +186,7 @@ const MusicVisualizer = () => {
           </button>
           <input
             className="w-full cursor-pointer"
+            title="Playback (left/right)"
             type="range"
             min={0}
             max={duration}
