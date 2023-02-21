@@ -7,6 +7,7 @@ const MusicVisualizer = () => {
   const [track, setTrack] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
+  const [volume, setVolume] = useState(100);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const tracks = [
@@ -62,6 +63,10 @@ const MusicVisualizer = () => {
   };
   const mute = () => {
     audioRef.current!.muted = !muted;
+    if (volume === 0 && muted) {
+      setVolume(1);
+      audioRef.current!.volume = 1;
+    }
     setMuted(!muted);
   };
   const formatTime = (seconds: number) => {
@@ -117,6 +122,20 @@ const MusicVisualizer = () => {
               <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
             </svg>
           </button>
+          <input
+            className="ml-2 w-20 cursor-pointer"
+            type="range"
+            min={0}
+            max={1}
+            value={volume}
+            step={0.01}
+            onChange={(ev) => {
+              const val = Number(ev.target.value);
+              audioRef.current!.volume = val;
+              setVolume(val);
+              if (val === 0) setMuted(true);
+            }}
+          />
           <button onClick={mute}>
             <svg
               width="25"
