@@ -17,6 +17,10 @@ const MusicVisualizer = () => {
     "Fly Away",
     "Sunset",
   ];
+  window.onresize = () => {
+    const canvas = canvasRef.current!;
+    canvas.width = canvas.parentElement!.clientWidth;
+  };
   useEffect(() => {
     setAudioContext(new AudioContext());
     const canvas = canvasRef.current!;
