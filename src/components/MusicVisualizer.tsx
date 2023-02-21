@@ -51,7 +51,6 @@ const MusicVisualizer = () => {
       .then(() => setPlaying(true))
       .catch((err) => console.debug(err));
     setDuration(audio.duration);
-    audio.ontimeupdate = () => setCurrentTime(audio.currentTime);
     renderFrame();
     return () => {
       audioContext.close().catch((err) => console.debug(err));
@@ -75,9 +74,8 @@ const MusicVisualizer = () => {
     setMuted(!muted);
   };
   const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
-    return `${mins < 10 ? `${mins}` : mins}:${secs < 10 ? `0${secs}` : secs}`;
+    return `${Math.floor(seconds / 60)}:${secs < 10 ? `0${secs}` : secs}`;
   };
   useHotkeys("m", mute);
   useHotkeys("p", prev);
