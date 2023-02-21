@@ -1,3 +1,4 @@
+import Project from "components/Project";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -15,93 +16,6 @@ const Projects = () => {
     "aliasme",
     "statusline.vim",
   ];
-  const content = (proj: string) => {
-    switch (proj) {
-      case "AniCal":
-        return (
-          <>
-            <div>
-              AniCal is a website designed to help you keep track of your
-              seasonal anime across multiple streaming services. You can create
-              your own list of anime and AniCal will track and display your
-              watch history for the current week and last week.
-            </div>
-            <div>
-              Check out AniCal at{" "}
-              <a className="text-blue-400" href="https://anical.vercel.app">
-                https://anical.vercel.app
-              </a>
-            </div>
-          </>
-        );
-      case "GitPrompt":
-        return <div>Upgrade your shell prompt with GitPrompt!</div>;
-      case "YouTubeUtils":
-        return (
-          <>
-            <div>{proj}</div>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </>
-        );
-      case "mouselessV2":
-        return (
-          <>
-            <div>{proj}</div>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </>
-        );
-      case "Manual Code Injecter":
-        return (
-          <>
-            <div>{proj}</div>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </>
-        );
-      case "vim-template":
-        return (
-          <>
-            <div>{proj}</div>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </>
-        );
-      case "QuickShot":
-        return (
-          <>
-            <div>{proj}</div>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </>
-        );
-      case "cmp-commit":
-        return (
-          <>
-            <div>{proj}</div>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </>
-        );
-      case "aliasme":
-        return (
-          <>
-            <div>{proj}</div>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </>
-        );
-      case "statusline.vim":
-        return (
-          <>
-            <div>{proj}</div>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
-          </>
-        );
-    }
-  };
   return (
     <>
       <div className="absolute h-1/2 w-full bg-black"></div>
@@ -130,7 +44,7 @@ const Projects = () => {
             </motion.button>
           ))}
         </div>
-        <div>{content(name)}</div>
+        <Project name={name} />
       </div>
     </>
   );
