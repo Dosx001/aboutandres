@@ -32,7 +32,7 @@ const ImgSlider = ({ imgs }: { imgs: string[] }) => {
             </button>
           </div>
         </div>
-        <div className="border border-gray-500 bg-black">
+        <div>
           {imgs.map(
             (img, i) =>
               index === i && (
@@ -43,7 +43,7 @@ const ImgSlider = ({ imgs }: { imgs: string[] }) => {
                   alt=""
                   width={400}
                   height={400}
-                  className="mx-auto w-96 opacity-50"
+                  className="mx-auto w-full"
                 />
               )
           )}

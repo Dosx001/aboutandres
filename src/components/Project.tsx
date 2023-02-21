@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ImgSlider from "./ImgSlider";
 
 const Project = ({ name }: { name: string }) => {
   const res = (element: JSX.Element) => (
@@ -9,7 +10,7 @@ const Project = ({ name }: { name: string }) => {
       key={name}
     >
       <h2 className="text-center text-2xl">{name}</h2>
-      {element}
+      <div className="box">{element}</div>
     </motion.div>
   );
   switch (name) {
@@ -17,10 +18,9 @@ const Project = ({ name }: { name: string }) => {
       return res(
         <>
           <div>
-            AniCal is a website designed to help you keep track of your seasonal
-            anime across multiple streaming services. You can create your own
-            list of anime and AniCal will track and display your watch history
-            for the current week and last week.
+            Keep track of your seasonal anime across multiple streaming
+            services. Create your own list of anime and AniCal will track and
+            display your watch history.
           </div>
           <div>
             Check out AniCal at{" "}
@@ -28,6 +28,16 @@ const Project = ({ name }: { name: string }) => {
               https://anical.vercel.app
             </a>
           </div>
+          <ImgSlider
+            imgs={[
+              "projects/home.png",
+              "projects/ui.png",
+              "projects/search.png",
+              "projects/fuzzy.png",
+              "projects/season.png",
+              "projects/filter.png",
+            ]}
+          />
         </>
       );
     case "GitPrompt":
