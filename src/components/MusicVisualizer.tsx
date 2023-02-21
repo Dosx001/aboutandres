@@ -7,7 +7,7 @@ const MusicVisualizer = () => {
   const [track, setTrack] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
-  const [volume, setVolume] = useState(100);
+  const [volume, setVolume] = useState(1);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const tracks = [
@@ -92,23 +92,13 @@ const MusicVisualizer = () => {
           Track {track + 1}/{tracks.length} : {tracks[track]!}
         </div>
         <div className="flex">
-          <button className="" onClick={prev}>
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 12 12"
-              className="fill-white hover:fill-[#00b6f0]"
-            >
+          <button className="fill-white hover:fill-[#00b6f0]" onClick={prev}>
+            <svg width="15" height="15" viewBox="0 0 12 12">
               <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
             </svg>
           </button>
-          <button onClick={play}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 20 20"
-              className="fill-white hover:fill-[#00b6f0]"
-            >
+          <button className="fill-white hover:fill-[#00b6f0]" onClick={play}>
+            <svg width="25" height="25" viewBox="0 0 20 20">
               {playing ? (
                 <path d="M5 4H7V16H5ZM13 4H15V16H13Z" />
               ) : (
@@ -116,13 +106,11 @@ const MusicVisualizer = () => {
               )}
             </svg>
           </button>
-          <button className="" onClick={next}>
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 12 12"
-              className="rotate-180 fill-white hover:fill-[#00b6f0]"
-            >
+          <button
+            className="rotate-180 fill-white hover:fill-[#00b6f0]"
+            onClick={next}
+          >
+            <svg width="15" height="15" viewBox="0 0 12 12">
               <path d="M2 1v10h-2v-10h1zm9 0l-8 5 8 5-10z" />
             </svg>
           </button>
@@ -141,13 +129,11 @@ const MusicVisualizer = () => {
               else if (muted) setMuted(false);
             }}
           />
-          <button onClick={mute}>
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 75 75"
-              className="mx-2 fill-white stroke-white stroke-[4] hover:fill-[#00b6f0] hover:stroke-[#00b6f0]"
-            >
+          <button
+            className="mx-2 fill-white stroke-white stroke-[4] hover:fill-[#00b6f0] hover:stroke-[#00b6f0]"
+            onClick={mute}
+          >
+            <svg width="25" height="25" viewBox="0 0 75 75">
               <path d="M39.389 13.769L22.235 28.606L6 28.606L6 47.699L21.989 47.699L39.389 62.75L39.389 13.769z" />
               {muted ? (
                 <path className="fill-none" d="m49 26 20 24m0-24-20 24" />
