@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useHotkeys } from "react-hotkeys-hook";
 
 const MusicVisualizer = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -78,6 +79,33 @@ const MusicVisualizer = () => {
     const secs = Math.floor(seconds % 60);
     return `${mins < 10 ? `${mins}` : mins}:${secs < 10 ? `0${secs}` : secs}`;
   };
+  useHotkeys("m", mute);
+  useHotkeys("p", prev);
+  useHotkeys("n", next);
+  useHotkeys("space", play);
+  useHotkeys("up", () => {
+    let vol = volume + 0.05;
+    if (1 < vol) vol = 1;
+    audioRef.current!.volume = vol;
+    setVolume(vol);
+  });
+  useHotkeys("down", () => {
+    let vol = volume - 0.05;
+    if (vol < 0) vol = 0;
+    audioRef.current!.volume = vol;
+    setVolume(vol);
+  });
+  useHotkeys("left", () => {
+    let time = currentTime - 5;
+    if (time < 0) time = 0;
+    audioRef.current!.currentTime = time;
+    setCurrentTime(time);
+  });
+  useHotkeys("right", () => {
+    const time = currentTime + 5;
+    audioRef.current!.currentTime = time;
+    setCurrentTime(time);
+  });
   return (
     <div className="fixed bottom-10 w-11/12 whitespace-nowrap md:w-3/4 3xl:w-1/2">
       <audio
