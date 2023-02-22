@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import ImgSlider from "./ImgSlider";
 
 const Project = ({ name }: { name: string }) => {
@@ -49,7 +50,7 @@ const Project = ({ name }: { name: string }) => {
     case "GitPrompt":
       return res(
         <>
-          <div> Upgrade your shell prompt with GitPrompt!</div>
+          <div>Upgrade your shell prompt with GitPrompt!</div>
           <h2 className="border-b text-2xl">Installation</h2>
           <div>paru -S git-prompt</div>
           <div>yay -S git-prompt</div>
@@ -72,8 +73,43 @@ const Project = ({ name }: { name: string }) => {
     case "YouTubeUtils":
       return res(
         <>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint consectetur cupidatat.
+          <div>
+            Play videos at the highest quality, dynamically resize video player,
+            extra hotkeys to loop video and autoplay, and more! Works on mobile,
+            desktop, and embed videos.
+          </div>
+          <h2 className="border-b text-2xl">Installation</h2>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/youtubeutils/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              loader={({ src, width }) => `${src}?w=${width}`}
+              src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"
+              width={200}
+              height={200}
+              alt="addon"
+              className="mt-2 rounded shadow shadow-black"
+            />
+          </a>
+          <h2 className="border-b text-2xl">GitHub</h2>
+          <a
+            href="https://github.com/Dosx001/YouTubeUtils/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Dosx001/YouTubeUtils
+          </a>
+          <ImgSlider
+            imgs={[
+              "https://addons.mozilla.org/user-media/previews/full/277/277780.png",
+              "https://addons.mozilla.org/user-media/previews/full/277/277522.png",
+              "https://addons.mozilla.org/user-media/previews/full/277/277617.png",
+              "https://addons.mozilla.org/user-media/previews/full/277/277616.png",
+              "https://addons.mozilla.org/user-media/previews/full/277/277520.png",
+            ]}
+          />
         </>
       );
     case "mouselessV2":

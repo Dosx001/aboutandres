@@ -59,8 +59,8 @@ const ImgSlider = ({ imgs }: { imgs: string[] }) => {
                       loader={({ src, width }) => `${src}?w=${width}`}
                       src={img}
                       alt=""
-                      width={1150}
-                      height={1160}
+                      width={1000}
+                      height={1000}
                       className="mx-auto shadow-box"
                     />
                   </motion.div>
