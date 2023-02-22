@@ -11,8 +11,9 @@ const Project = ({ name }: { name: string }) => {
         exit={{ scale: 0, opacity: 0, transition: { duration: 0.1 } }}
         transition={{ duration: 0.5 }}
         key={name}
+        className="project"
       >
-        <h2 className="border-b text-2xl">{name}</h2>
+        <h2>{name}</h2>
         <div>{element}</div>
       </motion.div>
     </AnimatePresence>
@@ -26,13 +27,8 @@ const Project = ({ name }: { name: string }) => {
             services. Create your own list of anime and AniCal will track and
             display your watch history.
           </div>
-          <h2 className="border-b text-2xl">Link</h2>
-          <a
-            className="hover:underline"
-            href="https://anical.vercel.app"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <h2>Link</h2>
+          <a href="https://anical.vercel.app" target="_blank" rel="noreferrer">
             https://anical.vercel.app
           </a>
           <ImgSlider
@@ -51,12 +47,11 @@ const Project = ({ name }: { name: string }) => {
       return res(
         <>
           <div>Upgrade your shell prompt with GitPrompt!</div>
-          <h2 className="border-b text-2xl">Installation</h2>
+          <h2>Installation</h2>
           <div>paru -S git-prompt</div>
           <div>yay -S git-prompt</div>
-          <h2 className="border-b text-2xl">GitHub</h2>
+          <h2>GitHub</h2>
           <a
-            className="hover:underline"
             href="https://github.com/Dosx001/GitPrompt"
             target="_blank"
             rel="noreferrer"
@@ -79,7 +74,7 @@ const Project = ({ name }: { name: string }) => {
             extra hotkeys to loop video and autoplay, and more! Works on mobile,
             desktop, and embed videos.
           </div>
-          <h2 className="border-b text-2xl">Installation</h2>
+          <h2>Installation</h2>
           <div className="w-fit">
             <a
               href="https://addons.mozilla.org/en-US/firefox/addon/youtubeutils/"
@@ -96,9 +91,8 @@ const Project = ({ name }: { name: string }) => {
               />
             </a>
           </div>
-          <h2 className="border-b text-2xl">GitHub</h2>
+          <h2>GitHub</h2>
           <a
-            className="hover:underline"
             href="https://github.com/Dosx001/YouTubeUtils/"
             target="_blank"
             rel="noreferrer"
@@ -120,7 +114,7 @@ const Project = ({ name }: { name: string }) => {
       return res(
         <>
           <div>Browse the web, mouse not required.</div>
-          <h2 className="border-b text-2xl">Installation</h2>
+          <h2>Installation</h2>
           <div className="w-fit">
             <a
               href="https://addons.mozilla.org/en-US/firefox/addon/mouselessv2"
@@ -137,9 +131,8 @@ const Project = ({ name }: { name: string }) => {
               />
             </a>
           </div>
-          <h2 className="border-b text-2xl">GitHub</h2>
+          <h2>GitHub</h2>
           <a
-            className="hover:underline"
             href="https://github.com/Dosx001/mouselessV2"
             target="_blank"
             rel="noreferrer"
