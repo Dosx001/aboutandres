@@ -130,8 +130,15 @@ const Project = ({ name }: { name: string }) => {
     case "Manual Code Injecter":
       return res(
         <>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint consectetur cupidatat.
+          <div>Inject personal code using customizable hotkeys.</div>
+          {firefox("manualcodeinjector")}
+          {github("ManuelCodeInjector")}
+          <ImgSlider
+            imgs={[
+              "https://addons.mozilla.org/user-media/previews/full/279/279062.png",
+              "https://addons.mozilla.org/user-media/previews/full/276/276253.png",
+            ]}
+          />
         </>
       );
     case "vim-template":
