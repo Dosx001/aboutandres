@@ -80,20 +80,22 @@ const Project = ({ name }: { name: string }) => {
             desktop, and embed videos.
           </div>
           <h2 className="border-b text-2xl">Installation</h2>
-          <a
-            href="https://addons.mozilla.org/en-US/firefox/addon/youtubeutils/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Image
-              loader={({ src, width }) => `${src}?w=${width}`}
-              src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"
-              width={200}
-              height={200}
-              alt="addon"
-              className="mt-2 rounded shadow shadow-black"
-            />
-          </a>
+          <div className="w-fit">
+            <a
+              href="https://addons.mozilla.org/en-US/firefox/addon/youtubeutils/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                loader={({ src, width }) => `${src}?w=${width}`}
+                src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"
+                width={183}
+                height={183}
+                alt="addon"
+                className="mt-2 rounded shadow shadow-black"
+              />
+            </a>
+          </div>
           <h2 className="border-b text-2xl">GitHub</h2>
           <a
             className="hover:underline"
