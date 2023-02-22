@@ -1,17 +1,20 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ImgSlider from "./ImgSlider";
 
 const Project = ({ name }: { name: string }) => {
   const res = (element: JSX.Element) => (
-    <motion.div
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      key={name}
-    >
-      <h2 className="text-center text-2xl">{name}</h2>
-      <div className="box">{element}</div>
-    </motion.div>
+    <AnimatePresence>
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0, opacity: 0, transition: { duration: 0.1 } }}
+        transition={{ duration: 0.5 }}
+        key={name}
+      >
+        <h2 className="text-center text-2xl">{name}</h2>
+        <div className="box">{element}</div>
+      </motion.div>
+    </AnimatePresence>
   );
   switch (name) {
     default:
