@@ -6,6 +6,9 @@
   html {
     @apply overflow-hidden font-sans text-white;
   }
+  a {
+    @apply text-[cyan];
+  }
 }
 @layer utilities {
   .box {
