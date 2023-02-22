@@ -12,7 +12,7 @@ const Project = ({ name }: { name: string }) => {
         key={name}
       >
         <h2 className="text-center text-2xl">{name}</h2>
-        <div className="box">{element}</div>
+        <div>{element}</div>
       </motion.div>
     </AnimatePresence>
   );
