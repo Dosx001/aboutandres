@@ -56,6 +56,7 @@ const Project = ({ name }: { name: string }) => {
           <div>yay -S git-prompt</div>
           <h2 className="border-b text-2xl">GitHub</h2>
           <a
+            className="hover:underline"
             href="https://github.com/Dosx001/GitPrompt"
             target="_blank"
             rel="noreferrer"
@@ -95,6 +96,7 @@ const Project = ({ name }: { name: string }) => {
           </a>
           <h2 className="border-b text-2xl">GitHub</h2>
           <a
+            className="hover:underline"
             href="https://github.com/Dosx001/YouTubeUtils/"
             target="_blank"
             rel="noreferrer"
