@@ -25,9 +25,13 @@ const Project = ({ name }: { name: string }) => {
             services. Create your own list of anime and AniCal will track and
             display your watch history.
           </div>
-          <div>
-            Check out AniCal at{" "}
-            <a className="text-blue-400" href="https://anical.vercel.app">
+          <div className="text-center text-2xl text-blue-400">
+            <a
+              className="hover:underline"
+              href="https://anical.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+            >
               https://anical.vercel.app
             </a>
           </div>
