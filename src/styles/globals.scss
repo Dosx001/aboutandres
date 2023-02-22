@@ -11,14 +11,6 @@
   .box {
     @apply mx-auto w-11/12 md:w-3/4 3xl:w-1/2;
   }
-  .muBtn {
-    @apply m-1 rounded border bg-black p-2 shadow-lg shadow-black hover:animate-pulse;
-  }
-}
-ul {
-  list-style: disc;
-  margin: 0 0 0 1.5rem;
-  padding: 0;
 }
 @each $direction in "left", "right", "top", "bottom" {
   @keyframes #{$direction} {
