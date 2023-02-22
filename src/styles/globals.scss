@@ -9,11 +9,12 @@
 }
 @layer components {
   .project {
+    @apply text-center;
     a {
       @apply text-black hover:underline;
     }
     h2 {
-      @apply border-b text-2xl;
+      @apply text-2xl font-bold;
     }
   }
 }

@@ -6,7 +6,7 @@ const Project = ({ name }: { name: string }) => {
   const firefox = (name: string) => (
     <>
       <h2>Installation</h2>
-      <div className="w-fit">
+      <div className="mx-auto w-fit">
         <a
           href={`https://addons.mozilla.org/en-US/firefox/addon/${name}/`}
           target="_blank"
