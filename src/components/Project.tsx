@@ -3,6 +3,39 @@ import Image from "next/image";
 import ImgSlider from "./ImgSlider";
 
 const Project = ({ name }: { name: string }) => {
+  const firefox = (name: string) => (
+    <>
+      <h2>Installation</h2>
+      <div className="w-fit">
+        <a
+          href={`https://addons.mozilla.org/en-US/firefox/addon/${name}/`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            loader={({ src, width }) => `${src}?w=${width}`}
+            src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"
+            width={183}
+            height={183}
+            alt="addon"
+            className="mt-2 rounded shadow shadow-black"
+          />
+        </a>
+      </div>
+    </>
+  );
+  const github = (name: string) => (
+    <>
+      <h2>GitHub</h2>
+      <a
+        href={`https://github.com/Dosx001/${name}/`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Dosx001/{name}
+      </a>
+    </>
+  );
   const res = (element: JSX.Element) => (
     <AnimatePresence>
       <motion.div
@@ -50,14 +83,7 @@ const Project = ({ name }: { name: string }) => {
           <h2>Installation</h2>
           <div>paru -S git-prompt</div>
           <div>yay -S git-prompt</div>
-          <h2>GitHub</h2>
-          <a
-            href="https://github.com/Dosx001/GitPrompt"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Dosx001/GitPrompt
-          </a>
+          {github(name)}
           <ImgSlider
             imgs={[
               "https://camo.githubusercontent.com/52dc99d82fcba309ab2e1dfa6c4d3a0f348618e42c487946f6a8d1a05836a278/68747470733a2f2f692e696d6775722e636f6d2f38357741386e692e706e673f31",
@@ -74,31 +100,8 @@ const Project = ({ name }: { name: string }) => {
             extra hotkeys to loop video and autoplay, and more! Works on mobile,
             desktop, and embed videos.
           </div>
-          <h2>Installation</h2>
-          <div className="w-fit">
-            <a
-              href="https://addons.mozilla.org/en-US/firefox/addon/youtubeutils/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                loader={({ src, width }) => `${src}?w=${width}`}
-                src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"
-                width={183}
-                height={183}
-                alt="addon"
-                className="mt-2 rounded shadow shadow-black"
-              />
-            </a>
-          </div>
-          <h2>GitHub</h2>
-          <a
-            href="https://github.com/Dosx001/YouTubeUtils/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Dosx001/YouTubeUtils
-          </a>
+          {firefox("youtubeutils")}
+          {github(name)}
           <ImgSlider
             imgs={[
               "https://addons.mozilla.org/user-media/previews/full/277/277780.png",
@@ -114,31 +117,8 @@ const Project = ({ name }: { name: string }) => {
       return res(
         <>
           <div>Browse the web, mouse not required.</div>
-          <h2>Installation</h2>
-          <div className="w-fit">
-            <a
-              href="https://addons.mozilla.org/en-US/firefox/addon/mouselessv2"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                loader={({ src, width }) => `${src}?w=${width}`}
-                src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"
-                width={183}
-                height={183}
-                alt="addon"
-                className="mt-2 rounded shadow shadow-black"
-              />
-            </a>
-          </div>
-          <h2>GitHub</h2>
-          <a
-            href="https://github.com/Dosx001/mouselessV2"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Dosx001/mouselessV2
-          </a>
+          {firefox(name)}
+          {github(name)}
           <ImgSlider
             imgs={[
               "https://addons.mozilla.org/user-media/previews/full/276/276596.png",
