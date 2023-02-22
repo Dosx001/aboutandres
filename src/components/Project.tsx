@@ -119,8 +119,39 @@ const Project = ({ name }: { name: string }) => {
     case "mouselessV2":
       return res(
         <>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint consectetur cupidatat.
+          <div>Browse the web, mouse not required.</div>
+          <h2 className="border-b text-2xl">Installation</h2>
+          <div className="w-fit">
+            <a
+              href="https://addons.mozilla.org/en-US/firefox/addon/mouselessv2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                loader={({ src, width }) => `${src}?w=${width}`}
+                src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"
+                width={183}
+                height={183}
+                alt="addon"
+                className="mt-2 rounded shadow shadow-black"
+              />
+            </a>
+          </div>
+          <h2 className="border-b text-2xl">GitHub</h2>
+          <a
+            className="hover:underline"
+            href="https://github.com/Dosx001/mouselessV2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Dosx001/mouselessV2
+          </a>
+          <ImgSlider
+            imgs={[
+              "https://addons.mozilla.org/user-media/previews/full/276/276596.png",
+              "https://addons.mozilla.org/user-media/previews/full/276/276597.png",
+            ]}
+          />
         </>
       );
     case "Manual Code Injecter":
