@@ -144,8 +144,15 @@ const Project = ({ name }: { name: string }) => {
     case "vim-template":
       return res(
         <>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint consectetur cupidatat.
+          <div>
+            Vim plugin that dynamically creates personalized starter code for
+            new files.
+          </div>
+          <h2>Installation</h2>
+          <div>Plug &#34;Dosx001/vim-template&#34;</div>
+          <div>Plugin &#34;Dosx001/vim-template&#34;</div>
+          <div>use &#34;Dosx001/vim-template&#34;</div>
+          {github(name)}
         </>
       );
     case "QuickShot":
