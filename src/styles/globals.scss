@@ -11,7 +11,7 @@
   .project {
     @apply text-center;
     a {
-      @apply text-black hover:underline;
+      @apply text-[blue] underline hover:text-white;
     }
     h2 {
       @apply text-2xl font-bold;

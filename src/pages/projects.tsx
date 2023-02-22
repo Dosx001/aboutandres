@@ -13,7 +13,6 @@ const Projects = () => {
     "vim-template",
     "QuickShot",
     "cmp-commit",
-    "aliasme",
     "statusline.vim",
   ];
   return (

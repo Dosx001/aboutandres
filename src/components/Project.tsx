@@ -69,9 +69,7 @@ const Project = ({ name }: { name: string }) => {
               "projects/home.png",
               "projects/ui.png",
               "projects/search.png",
-              "projects/fuzzy.png",
               "projects/season.png",
-              "projects/filter.png",
             ]}
           />
         </>
@@ -122,7 +120,7 @@ const Project = ({ name }: { name: string }) => {
           <ImgSlider
             imgs={[
               "https://addons.mozilla.org/user-media/previews/full/276/276596.png",
-              "https://addons.mozilla.org/user-media/previews/full/276/276597.png",
+              "https://addons.mozilla.org/user-media/previews/full/279/279071.png",
             ]}
           />
         </>
@@ -150,7 +148,6 @@ const Project = ({ name }: { name: string }) => {
           </div>
           <h2>Installation</h2>
           <div>Plug &#34;Dosx001/vim-template&#34;</div>
-          <div>Plugin &#34;Dosx001/vim-template&#34;</div>
           <div>use &#34;Dosx001/vim-template&#34;</div>
           {github(name)}
         </>
@@ -158,29 +155,43 @@ const Project = ({ name }: { name: string }) => {
     case "QuickShot":
       return res(
         <>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint consectetur cupidatat.
+          <div>Quickly navigate between URLs using hotkeys.</div>
+          {firefox("quickshot")}
+          {github(name)}
+          <ImgSlider
+            imgs={[
+              "https://addons.mozilla.org/user-media/previews/full/275/275865.png",
+              "https://addons.mozilla.org/user-media/previews/full/275/275932.png",
+            ]}
+          />
         </>
       );
     case "cmp-commit":
       return res(
         <>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint consectetur cupidatat.
-        </>
-      );
-    case "aliasme":
-      return res(
-        <>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint consectetur cupidatat.
+          <div>
+            Write git commit faster with auto-completion of filenames, a custom
+            word list, and more!
+          </div>
+          <h2>Installation</h2>
+          <table className="mx-auto text-left">
+            <tr>Plug &#34;hrsh7th/nvim-cmp&#34;</tr>
+            <tr>Plug &#34;Dosx001/cmp-commit&#34;</tr>
+            <tr>
+              {'use({"Dosx001/cmp-commit", requires = "hrsh7th/nvim-cmp"})'}
+            </tr>
+          </table>
+          {github(name)}
         </>
       );
     case "statusline.vim":
       return res(
         <>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-          cillum sint consectetur cupidatat.
+          <div>A lightweight vim statusline with Git integration.</div>
+          <h2>Installation</h2>
+          <div>Plug &#34;Dosx001/statusline.vim&#34;</div>
+          <div>use &#34;Dosx001/statusline.vim&#34;</div>
+          {github(name)}
         </>
       );
   }
