@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 
@@ -55,13 +55,10 @@ const ImgSlider = ({ imgs }: { imgs: string[] }) => {
                     exit={{ scale: 0, transition: { delay: 0 } }}
                     key={i}
                   >
-                    <Image
-                      loader={({ src, width }) => `${src}?w=${width}`}
+                    <img
                       src={img}
-                      alt=""
-                      width={1000}
-                      height={1000}
-                      className="mx-auto shadow-box"
+                      alt="Image"
+                      className="shadow-box mx-auto max-h-[55vh]"
                     />
                   </motion.div>
                 )
