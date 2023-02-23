@@ -44,27 +44,25 @@ const ImgSlider = ({ imgs }: { imgs: string[] }) => {
             </button>
           </div>
         </div>
-        <div>
-          <AnimatePresence>
-            {imgs.map(
-              (img, i) =>
-                index === i && (
-                  <motion.div
-                    initial={{ opacity: 0, x: x }}
-                    animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
-                    exit={{ scale: 0, transition: { delay: 0 } }}
-                    key={i}
-                  >
-                    <img
-                      src={img}
-                      alt="Image"
-                      className="shadow-box mx-auto max-h-[55vh]"
-                    />
-                  </motion.div>
-                )
-            )}
-          </AnimatePresence>
-        </div>
+        <AnimatePresence>
+          {imgs.map(
+            (img, i) =>
+              index === i && (
+                <motion.div
+                  initial={{ opacity: 0, x: x }}
+                  animate={{ opacity: 1, x: 0, transition: { delay: 0.3 } }}
+                  exit={{ scale: 0, transition: { delay: 0 } }}
+                  key={i}
+                >
+                  <img
+                    src={img}
+                    alt="Image"
+                    className="mx-auto max-h-[55vh] shadow-box"
+                  />
+                </motion.div>
+              )
+          )}
+        </AnimatePresence>
       </div>
     </>
   );

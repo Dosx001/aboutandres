@@ -133,7 +133,7 @@ const Project = ({ name }: { name: string }) => {
           {github("ManuelCodeInjector")}
           <ImgSlider
             imgs={[
-              "https://addons.mozilla.org/user-media/previews/full/279/279062.png",
+              "https://addons.mozilla.org/user-media/previews/full/279/279083.png",
               "https://addons.mozilla.org/user-media/previews/full/276/276253.png",
             ]}
           />
