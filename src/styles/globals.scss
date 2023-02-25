@@ -22,12 +22,18 @@
   .box {
     @apply mx-auto w-11/12 md:w-3/4 3xl:w-1/2;
   }
+  .cube {
+    @apply flex justify-center;
+    button {
+      @apply m-1 rounded bg-[#2e2e2e] p-1 shadow shadow-black hover:animate-pulse;
+    }
+  }
   .face {
-    @apply absolute flex h-full w-full items-center justify-center text-6xl;
+    @apply absolute flex h-full w-full items-center justify-center border-2 border-black text-6xl;
   }
   .preserve-3d {
-    @apply h-96 w-96;
     transform-style: preserve-3d;
+    transition: all 0.5s ease-in;
   }
 }
 @each $direction in "left", "right", "top", "bottom" {
