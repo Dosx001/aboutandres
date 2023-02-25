@@ -2,17 +2,33 @@ import Image from "next/image";
 import { useState } from "react";
 
 const Cube = () => {
-  const [face, setFace] = useState("0,1,0,0deg");
+  const [face, setFace] = useState(0);
+  const rotation = () => {
+    switch (face) {
+      default:
+        return "0,1,0,0deg";
+      case 1:
+        return "0,1,0,180deg";
+      case 2:
+        return "1,0,0,-90deg";
+      case 3:
+        return "1,0,0,90deg";
+      case 4:
+        return "0,1,0,90deg";
+      case 5:
+        return "0,1,0,-90deg";
+    }
+  };
   return (
-    <div className="mt-20">
+    <div className="mt-10">
       <div
-        className="preserve-3d mx-auto h-96 w-96"
-        style={{ transform: `rotate3d(${face})` }}
+        className="preserve-3d mx-auto h-[26rem] w-[26rem]"
+        style={{ transform: `rotate3d(${rotation()})` }}
       >
         <div
           className="face bg-red-600"
           style={{
-            transform: "translateZ(12rem)",
+            transform: "translateZ(13rem)",
           }}
         >
           <Image
@@ -35,7 +51,7 @@ const Cube = () => {
         <div
           className="face bg-orange-500"
           style={{
-            transform: "rotateY(180deg) translateZ(12rem)",
+            transform: "rotateY(180deg) translateZ(13rem)",
           }}
         >
           <Image
@@ -58,7 +74,7 @@ const Cube = () => {
         <div
           className="face bg-yellow-300"
           style={{
-            transform: "rotateY(90deg) translateZ(12rem)",
+            transform: "rotateY(90deg) translateZ(13rem)",
           }}
         >
           Gaming
@@ -66,7 +82,7 @@ const Cube = () => {
         <div
           className="face bg-green-700"
           style={{
-            transform: "rotateY(-90deg) translateZ(12rem)",
+            transform: "rotateY(-90deg) translateZ(13rem)",
           }}
         >
           Anime
@@ -74,7 +90,7 @@ const Cube = () => {
         <div
           className="face bg-blue-700"
           style={{
-            transform: "rotateX(90deg) translateZ(12rem)",
+            transform: "rotateX(90deg) translateZ(13rem)",
           }}
         >
           <Image
@@ -97,19 +113,49 @@ const Cube = () => {
         <div
           className="face bg-violet-700"
           style={{
-            transform: "rotateX(-90deg) translateZ(12rem)",
+            transform: "rotateX(-90deg) translateZ(13rem)",
           }}
         >
           FOSS
         </div>
       </div>
       <div className="cube">
-        <button onClick={() => setFace("0,1,0,0deg")}>Coding</button>
-        <button onClick={() => setFace("0,1,0,180deg")}>Linux</button>
-        <button onClick={() => setFace("1,0,0,-90deg")}>Vim</button>
-        <button onClick={() => setFace("1,0,0,90deg")}>FOSS</button>
-        <button onClick={() => setFace("0,1,0,90deg")}>Anime</button>
-        <button onClick={() => setFace("0,1,0,-90deg")}>Gaming</button>
+        <button
+          onClick={() => setFace(0)}
+          style={{ background: face === 0 ? "pink" : "" }}
+        >
+          Coding
+        </button>
+        <button
+          onClick={() => setFace(1)}
+          style={{ background: face === 1 ? "pink" : "" }}
+        >
+          Linux
+        </button>
+        <button
+          onClick={() => setFace(2)}
+          style={{ background: face === 2 ? "pink" : "" }}
+        >
+          Vim
+        </button>
+        <button
+          onClick={() => setFace(3)}
+          style={{ background: face === 3 ? "pink" : "" }}
+        >
+          FOSS
+        </button>
+        <button
+          onClick={() => setFace(4)}
+          style={{ background: face === 4 ? "pink" : "" }}
+        >
+          Anime
+        </button>
+        <button
+          onClick={() => setFace(5)}
+          style={{ background: face === 5 ? "pink" : "" }}
+        >
+          Gaming
+        </button>
       </div>
     </div>
   );

@@ -33,7 +33,7 @@
   }
   .preserve-3d {
     transform-style: preserve-3d;
-    transition: all 0.5s ease-in;
+    transition: all 1s ease-in;
   }
 }
 @each $direction in "left", "right", "top", "bottom" {
