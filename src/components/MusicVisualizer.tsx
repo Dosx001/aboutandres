@@ -66,6 +66,7 @@ const MusicVisualizer = () => {
       : audioRef.current!.play().catch((err) => console.debug(err));
     setPlaying(!playing);
   };
+  const disable = (ev: KeyboardEvent) => ev.preventDefault();
   const mute = () => {
     audioRef.current!.muted = !muted;
     if (volume === 0 && muted) {
@@ -107,20 +108,7 @@ const MusicVisualizer = () => {
   useHotkeys("space", play);
   const arrow = (ev: KeyboardEvent) => {
     ev.preventDefault();
-    switch (ev.key) {
-      case "ArrowUp":
-        up();
-        break;
-      case "ArrowDown":
-        down();
-        break;
-      case "ArrowLeft":
-        left();
-        break;
-      case "ArrowRight":
-        right();
-        break;
-    }
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: ev.key }));
   };
   return (
     <div className="fixed bottom-10 w-11/12 whitespace-nowrap md:w-3/4 3xl:w-1/2">
@@ -139,6 +127,7 @@ const MusicVisualizer = () => {
           <button
             className="fill-white hover:fill-[#00b6f0]"
             onClick={prev}
+            onKeyDown={disable}
             title="Previous (p)"
           >
             <svg width="15" height="15" viewBox="0 0 12 12">
@@ -148,6 +137,7 @@ const MusicVisualizer = () => {
           <button
             className="fill-white hover:fill-[#00b6f0]"
             onClick={play}
+            onKeyDown={disable}
             title="Play/Pause (space)"
           >
             <svg width="25" height="25" viewBox="0 0 20 20">
@@ -161,6 +151,7 @@ const MusicVisualizer = () => {
           <button
             className="rotate-180 fill-white hover:fill-[#00b6f0]"
             onClick={next}
+            onKeyDown={disable}
             title="Next (n)"
           >
             <svg width="15" height="15" viewBox="0 0 12 12">
@@ -187,6 +178,7 @@ const MusicVisualizer = () => {
           <button
             className="mx-2 fill-white stroke-white stroke-[4] hover:fill-[#00b6f0] hover:stroke-[#00b6f0]"
             onClick={mute}
+            onKeyDown={disable}
             title="Mute (m)"
           >
             <svg width="25" height="25" viewBox="0 0 75 75">
