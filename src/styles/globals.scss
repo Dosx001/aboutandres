@@ -8,6 +8,24 @@
   }
 }
 @layer components {
+  .cube {
+    @apply mx-auto grid grid-cols-3 md:w-1/2;
+    button {
+      @apply m-1 rounded bg-[#2e2e2e] p-1 shadow shadow-black hover:animate-pulse;
+    }
+  }
+  .face {
+    @apply absolute h-full w-full border-2 border-black text-6xl;
+  }
+  .interests {
+    @apply grid justify-center;
+    a {
+      @apply mt-2 flex text-blue-400 hover:text-white;
+    }
+    svg {
+      @apply mr-2 fill-white;
+    }
+  }
   .project {
     @apply text-center;
     a {
@@ -21,15 +39,6 @@
 @layer utilities {
   .box {
     @apply mx-auto w-11/12 md:w-3/4 3xl:w-1/2;
-  }
-  .cube {
-    @apply mx-auto grid grid-cols-3 md:w-1/2;
-    button {
-      @apply m-1 rounded bg-[#2e2e2e] p-1 shadow shadow-black hover:animate-pulse;
-    }
-  }
-  .face {
-    @apply absolute h-full w-full border-2 border-black text-6xl;
   }
   .preserve-3d {
     transform-style: preserve-3d;
