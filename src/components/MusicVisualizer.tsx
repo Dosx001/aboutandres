@@ -9,7 +9,7 @@ const MusicVisualizer = () => {
   const [track, setTrack] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
-  const [volume, setVolume] = useState(1);
+  const [volume, setVolume] = useState(0.25);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const tracks = [
@@ -45,6 +45,7 @@ const MusicVisualizer = () => {
         ctx.fillRect(i * 8, canvas.height - barHeight, 7, barHeight);
       }
     };
+    audio.volume = volume;
     audio.src = `music/${tracks[track]!}.mp3`;
     audio.load();
     audio
