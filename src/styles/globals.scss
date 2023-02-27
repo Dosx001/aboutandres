@@ -20,7 +20,7 @@
   .interests {
     @apply grid justify-center;
     a {
-      @apply mt-2 flex text-blue-400 hover:text-white;
+      @apply mt-2 flex w-fit text-blue-400 hover:text-white;
     }
     svg {
       @apply mr-2 fill-white;
