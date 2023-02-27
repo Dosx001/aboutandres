@@ -6,12 +6,12 @@ const About = () => {
   return (
     <>
       <div className="absolute h-screen w-screen bg-black" />
-      <DraggableShape shape="moon" color="green" size={1} x={50} y={50} />
-      <DraggableShape shape="star" color="orange" size={1} x={45} y={80} />
-      <DraggableShape shape="star4" color="yellow" size={2} x={5} y={45} />
-      <DraggableShape shape="saturn" color="blue" size={2} x={70} y={20} />
-      <DraggableShape shape="cresent" color="red" size={2} x={10} y={10} />
-      <div className="box relative z-10">
+      <DraggableShape drag={true} shape="moon" color="green" size={1} x={-250} y={500} />
+      <DraggableShape drag={false} shape="star" color="orange" size={1} x={80} y={350} />
+      <DraggableShape drag={false} shape="star4" color="yellow" size={2} x={200} y={20} />
+      <DraggableShape drag={false} shape="saturn" color="blue" size={2} x={150} y={700} />
+      <DraggableShape drag={false} shape="cresent" color="red" size={2} x={-100} y={100} />
+      <div className="box relative">
         <motion.h1
           className="pt-4 text-center text-4xl"
           initial={{ y: -100 }}
