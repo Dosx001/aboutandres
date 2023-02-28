@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
       <div className="absolute h-screen w-screen bg-black" />
-      <DraggableShape drag={true} shape="moon" color="green" size={1} x={-250} y={500} />
+      <DraggableShape drag={true} shape="moon" color="green" size={2} x={-250} y={500} />
       <DraggableShape drag={false} shape="star" color="orange" size={1} x={80} y={350} />
       <DraggableShape drag={false} shape="star4" color="yellow" size={2} x={200} y={20} />
       <DraggableShape drag={false} shape="saturn" color="blue" size={2} x={150} y={700} />

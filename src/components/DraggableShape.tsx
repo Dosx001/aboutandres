@@ -17,6 +17,8 @@ const DraggableShape = ({
   y: number;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  const [clr, setClr] = useState(color);
   const [draggable, setDraggable] = useState(drag);
   const [fixed, setFixed] = useState({ x: x, y: x });
   const [pointer, setPointer] = useState({ x: x, y: y });
@@ -37,18 +39,57 @@ const DraggableShape = ({
       className={`absolute z-10 ${x < 0 ? "right-0" : ""}`}
       ref={ref}
       animate={draggable ? pointer : fixed}
+      style={{ fill: clr }}
     >
       <svg
         viewBox={view}
-        className={`glow-${color}`}
+        className={`glow-${clr}`}
         width={100 * size}
         height={100 * size}
-        style={{ fill: color }}
       >
         {element}
       </svg>
+      {visible && (
+        <div className="relative h-fit rounded bg-[navy] p-1">
+          <div className="flex justify-between">
+            <div>Settings</div>
+            <button onClick={() => setVisible(false)}>
+              <svg
+                viewBox="0 0 10 10"
+                width="20"
+                height="20"
+                className="rounded bg-red-600 stroke-white stroke-2 p-1"
+              >
+                <path className="p-1" d="m0 0l10 10M0 10l10 -10" />
+              </svg>
+            </button>
+          </div>
+          <div>
+            {[
+              "red",
+              "orange",
+              "yellow",
+              "green",
+              "blue",
+              "indigo",
+              "violet",
+            ].map((c) => (
+              <button
+                key={c}
+                onClick={() => setClr(c)}
+                className="mx-1 h-4 w-4 rounded"
+                style={{ background: c }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </motion.div>
   );
+  const toggle = () => {
+    setDraggable(!draggable);
+    setVisible(draggable);
+  };
   switch (shape) {
     case "star":
       return res(
@@ -56,7 +97,7 @@ const DraggableShape = ({
         <>
           <path
             d="M25 5L32 20L48 22L36 34L40 48L25 42L10 48L14 34L2 22L18 20"
-            onClick={() => setDraggable(!draggable)}
+            onClick={toggle}
             className="hover:cursor-pointer"
           />
         </>
@@ -67,7 +108,7 @@ const DraggableShape = ({
         <>
           <path
             d="M5 25L20 20L25 5L30 20L45 25L30 30L25 45L20 30"
-            onClick={() => setDraggable(!draggable)}
+            onClick={toggle}
             className="hover:cursor-pointer"
           />
         </>
@@ -80,7 +121,7 @@ const DraggableShape = ({
             cx="15"
             cy="10"
             r="9"
-            onClick={() => setDraggable(!draggable)}
+            onClick={toggle}
             className="hover:cursor-pointer"
           />
           <ellipse
@@ -88,7 +129,7 @@ const DraggableShape = ({
             cy="10"
             rx="15"
             ry="3"
-            onClick={() => setDraggable(!draggable)}
+            onClick={toggle}
             className="hover:cursor-pointer"
           />
         </>
@@ -99,7 +140,7 @@ const DraggableShape = ({
         <>
           <path
             d="M20 2A1 1 0 0 0 20 32A18 18 0 0 1 20 2z"
-            onClick={() => setDraggable(!draggable)}
+            onClick={toggle}
             className="translate-x-2 hover:cursor-pointer"
           />
         </>
@@ -112,7 +153,7 @@ const DraggableShape = ({
             cx="5"
             cy="5"
             r="4"
-            onClick={() => setDraggable(!draggable)}
+            onClick={toggle}
             className="hover:cursor-pointer"
           />
         </>
