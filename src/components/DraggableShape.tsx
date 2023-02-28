@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import type { RefObject } from "react";
 import { useEffect, useRef, useState } from "react";
 
 const DraggableShape = ({
@@ -17,20 +16,29 @@ const DraggableShape = ({
   x: number;
   y: number;
 }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [draggable, setDraggable] = useState(drag);
-  const [position, setPosition] = useState({ x: x, y: x });
-  const { xp, yp } = useMouse(ref, x, y);
+  const [fixed, setFixed] = useState({ x: x, y: x });
+  const [pointer, setPointer] = useState({ x: x, y: y });
+  useEffect(() => setFixed(pointer), [draggable]);
   useEffect(() => {
-    setPosition({ x: xp, y: yp });
-  }, [draggable]);
+    const updatePointer = ({ clientX, clientY }: MouseEvent) => {
+      const el = ref.current!;
+      setPointer({
+        x: clientX - el.offsetLeft - el.offsetWidth / 2,
+        y: clientY - el.offsetTop - el.offsetHeight / 2,
+      });
+    };
+    window.addEventListener("pointermove", updatePointer);
+    return () => window.removeEventListener("pointermove", updatePointer);
+  });
   const res = (view: string, element: JSX.Element) => (
     <motion.div
       className={`absolute z-10 ${x < 0 ? "right-0" : ""}`}
       ref={ref}
-      animate={draggable ? { x: xp, y: yp } : position}
+      animate={draggable ? pointer : fixed}
     >
-      <motion.svg
+      <svg
         viewBox={view}
         className={`glow-${color}`}
         width={100 * size}
@@ -38,7 +46,7 @@ const DraggableShape = ({
         style={{ fill: color }}
       >
         {element}
-      </motion.svg>
+      </svg>
     </motion.div>
   );
   switch (shape) {
@@ -110,23 +118,6 @@ const DraggableShape = ({
         </>
       );
   }
-};
-
-const useMouse = (ref: RefObject<HTMLElement>, x: number, y: number) => {
-  const [point, setPoint] = useState({ xp: x, yp: y });
-  useEffect(() => {
-    if (!ref.current) return;
-    const updatePoint = ({ clientX, clientY }: MouseEvent) => {
-      const el = ref.current!;
-      setPoint({
-        xp: clientX - el.offsetLeft - el.offsetWidth / 2,
-        yp: clientY - el.offsetTop - el.offsetHeight / 2,
-      });
-    };
-    window.addEventListener("pointermove", updatePoint);
-    return () => window.removeEventListener("pointermove", updatePoint);
-  });
-  return point;
 };
 
 export default DraggableShape;
