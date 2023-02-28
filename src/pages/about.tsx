@@ -6,11 +6,46 @@ const About = () => {
   return (
     <>
       <div className="absolute h-screen w-screen bg-black" />
-      <DraggableShape drag={false} shape="moon" color="green" size={2} x={-100} y={100} />
-      <DraggableShape drag={false} shape="star" color="orange" size={1} x={80} y={350} />
-      <DraggableShape drag={false} shape="star4" color="yellow" size={2} x={200} y={40} />
-      <DraggableShape drag={false} shape="saturn" color="blue" size={2} x={150} y={700} />
-      <DraggableShape drag={true} shape="cresent" color="red" size={2} x={-250} y={500} />
+      <DraggableShape
+        drag={false}
+        shape="moon"
+        color="green"
+        size={2}
+        x={350}
+        y={250}
+      />
+      <DraggableShape
+        drag={false}
+        shape="star"
+        color="orange"
+        size={1}
+        x={80}
+        y={350}
+      />
+      <DraggableShape
+        drag={false}
+        shape="star4"
+        color="yellow"
+        size={2}
+        x={200}
+        y={40}
+      />
+      <DraggableShape
+        drag={false}
+        shape="saturn"
+        color="blue"
+        size={2}
+        x={150}
+        y={700}
+      />
+      <DraggableShape
+        drag={true}
+        shape="cresent"
+        color="red"
+        size={2}
+        x={250}
+        y={500}
+      />
       <div className="box relative">
         <motion.h1
           className="pt-4 text-center text-4xl"

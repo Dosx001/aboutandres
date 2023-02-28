@@ -38,7 +38,7 @@ const DraggableShape = ({
   });
   const res = (view: string, element: JSX.Element) => (
     <motion.div
-      className={`absolute z-10 ${x < 0 ? "right-0" : ""}`}
+      className={"absolute z-10"}
       ref={ref}
       animate={draggable ? pointer : fixed}
       style={{ fill: clr }}
