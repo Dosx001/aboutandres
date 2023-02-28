@@ -19,6 +19,8 @@ const DraggableShape = ({
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [clr, setClr] = useState(color);
+  const [scale, setScale] = useState(size);
+  const [rotate, setRotate] = useState(0);
   const [draggable, setDraggable] = useState(drag);
   const [fixed, setFixed] = useState({ x: x, y: x });
   const [pointer, setPointer] = useState({ x: x, y: y });
@@ -40,15 +42,22 @@ const DraggableShape = ({
       ref={ref}
       animate={draggable ? pointer : fixed}
       style={{ fill: clr }}
+      transition={{
+        type: "spring",
+        damping: 5,
+        stiffness: 50,
+        restDelta: 0.001,
+      }}
     >
-      <svg
+      <motion.svg
         viewBox={view}
         className={`glow-${clr}`}
-        width={100 * size}
-        height={100 * size}
+        width="100"
+        height="100"
+        animate={{ scale: scale, rotate: rotate }}
       >
         {element}
-      </svg>
+      </motion.svg>
       {visible && (
         <div className="relative h-fit rounded bg-[navy] p-1">
           <div className="flex justify-between">
@@ -81,6 +90,30 @@ const DraggableShape = ({
                 style={{ background: c }}
               />
             ))}
+          </div>
+          <div>
+            <span>Scale</span>
+            <input
+              className="ml-[18px] cursor-pointer align-bottom"
+              type="range"
+              min={0.5}
+              max={3}
+              value={scale}
+              step={0.1}
+              onChange={(ev) => setScale(Number(ev.target.value))}
+            />
+          </div>
+          <div>
+            <span>Rotate</span>
+            <input
+              className="ml-2 cursor-pointer align-bottom"
+              type="range"
+              min={0}
+              max={360}
+              value={rotate}
+              step={1}
+              onChange={(ev) => setRotate(Number(ev.target.value))}
+            />
           </div>
         </div>
       )}
