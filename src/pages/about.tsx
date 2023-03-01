@@ -7,8 +7,8 @@ const About = () => {
     <>
       <div className="absolute h-screen w-screen bg-black" />
       <DraggableShape
-        drag={false}
-        shape="moon"
+        drag={true}
+        shape="ufo"
         color="green"
         size={2}
         x={350}
@@ -16,19 +16,19 @@ const About = () => {
       />
       <DraggableShape
         drag={false}
-        shape="star"
+        shape="comet"
         color="orange"
-        size={1}
+        size={2}
         x={80}
         y={350}
       />
       <DraggableShape
         drag={false}
-        shape="star4"
+        shape="rocket"
         color="yellow"
         size={2}
         x={200}
-        y={40}
+        y={61}
       />
       <DraggableShape
         drag={false}
@@ -39,7 +39,7 @@ const About = () => {
         y={700}
       />
       <DraggableShape
-        drag={true}
+        drag={false}
         shape="cresent"
         color="red"
         size={2}

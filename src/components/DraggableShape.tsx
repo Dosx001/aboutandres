@@ -79,7 +79,16 @@ const DraggableShape = ({
             </button>
           </div>
           <div className="flex fill-gray-500">
-            {["star", "star4", "saturn", "moon", "cresent"].map((s) => (
+            {[
+              "comet",
+              "moon",
+              "rocket",
+              "saturn",
+              "star",
+              "star4",
+              "ufo",
+              "cresent",
+            ].map((s) => (
               <button className="mx-1" key={s} onClick={() => setShaper(s)}>
                 <MiniShape shape={s} />
               </button>
