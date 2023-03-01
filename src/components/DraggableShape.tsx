@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import MiniShape from "./MiniShape";
+import Shape from "./Shape";
 
 const DraggableShape = ({
   drag,
@@ -18,6 +20,7 @@ const DraggableShape = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [shaper, setShaper] = useState(shape);
   const [clr, setClr] = useState(color);
   const [scale, setScale] = useState(size);
   const [rotate, setRotate] = useState(0);
@@ -36,7 +39,11 @@ const DraggableShape = ({
     window.addEventListener("pointermove", updatePointer);
     return () => window.removeEventListener("pointermove", updatePointer);
   });
-  const res = (view: string, element: JSX.Element) => (
+  const toggle = () => {
+    setDraggable(!draggable);
+    setVisible(draggable);
+  };
+  return (
     <motion.div
       className={"absolute z-10"}
       ref={ref}
@@ -49,15 +56,13 @@ const DraggableShape = ({
         restDelta: 0.001,
       }}
     >
-      <motion.svg
-        viewBox={view}
-        className={`glow-${clr}`}
-        width="100"
-        height="100"
-        animate={{ scale: scale, rotate: rotate }}
-      >
-        {element}
-      </motion.svg>
+      <Shape
+        shape={shaper}
+        toggle={toggle}
+        color={clr}
+        scale={scale}
+        rotate={rotate}
+      />
       {visible && (
         <div className="relative h-fit rounded bg-[navy] p-1">
           <div className="flex justify-between">
@@ -72,6 +77,13 @@ const DraggableShape = ({
                 <path className="p-1" d="m0 0l10 10M0 10l10 -10" />
               </svg>
             </button>
+          </div>
+          <div className="flex fill-gray-500">
+            {["star", "star4", "saturn", "moon", "cresent"].map((s) => (
+              <button className="mx-1" key={s} onClick={() => setShaper(s)}>
+                <MiniShape shape={s} />
+              </button>
+            ))}
           </div>
           <div>
             {[
@@ -119,79 +131,6 @@ const DraggableShape = ({
       )}
     </motion.div>
   );
-  const toggle = () => {
-    setDraggable(!draggable);
-    setVisible(draggable);
-  };
-  switch (shape) {
-    case "star":
-      return res(
-        "0 0 50 50",
-        <>
-          <path
-            d="M25 5L32 20L48 22L36 34L40 48L25 42L10 48L14 34L2 22L18 20"
-            onClick={toggle}
-            className="hover:cursor-pointer"
-          />
-        </>
-      );
-    case "star4":
-      return res(
-        "0 0 50 50",
-        <>
-          <path
-            d="M5 25L20 20L25 5L30 20L45 25L30 30L25 45L20 30"
-            onClick={toggle}
-            className="hover:cursor-pointer"
-          />
-        </>
-      );
-    case "saturn":
-      return res(
-        "0 0 30 20",
-        <>
-          <circle
-            cx="15"
-            cy="10"
-            r="9"
-            onClick={toggle}
-            className="hover:cursor-pointer"
-          />
-          <ellipse
-            cx="15"
-            cy="10"
-            rx="15"
-            ry="3"
-            onClick={toggle}
-            className="hover:cursor-pointer"
-          />
-        </>
-      );
-    case "cresent":
-      return res(
-        "0 0 35 35",
-        <>
-          <path
-            d="M20 2A1 1 0 0 0 20 32A18 18 0 0 1 20 2z"
-            onClick={toggle}
-            className="translate-x-2 hover:cursor-pointer"
-          />
-        </>
-      );
-    default:
-      return res(
-        "0 0 10 10",
-        <>
-          <circle
-            cx="5"
-            cy="5"
-            r="4"
-            onClick={toggle}
-            className="hover:cursor-pointer"
-          />
-        </>
-      );
-  }
 };
 
 export default DraggableShape;
