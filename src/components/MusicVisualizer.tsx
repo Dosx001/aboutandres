@@ -26,12 +26,13 @@ const MusicVisualizer = () => {
   useEffect(() => {
     setAudioContext(new AudioContext());
     const canvas = canvasRef.current!;
-    const audio = audioRef.current!;
     const ctx = canvas.getContext("2d")!;
     canvas.width = canvas.parentElement!.clientWidth;
     canvas.height = window.innerHeight;
     const analyserNode = audioContext.createAnalyser();
     analyserNode.fftSize = 256;
+    const audio = audioRef.current!;
+    audio.volume = volume;
     audioContext.createMediaElementSource(audio).connect(analyserNode);
     analyserNode.connect(audioContext.destination);
     const frequencyData = new Uint8Array(analyserNode.frequencyBinCount);
@@ -45,19 +46,22 @@ const MusicVisualizer = () => {
         ctx.fillRect(i * 8, canvas.height - barHeight, 7, barHeight);
       }
     };
-    audio.volume = volume;
-    audio.src = `music/${tracks[track]!}.mp3`;
-    audio.load();
-    audio
-      .play()
-      .then(() => setPlaying(true))
-      .catch((err) => console.debug(err));
-    setDuration(audio.duration);
     renderFrame();
     return () => {
       audioContext.close().catch((err) => console.debug(err));
       setAudioContext(new AudioContext());
     };
+  }, []);
+  useEffect(() => {
+    setCurrentTime(0);
+    const audio = audioRef.current!;
+    audio.src = `music/${tracks[track]!}.mp3`;
+    audio.load();
+    setDuration(audio.duration);
+    audio
+      .play()
+      .then(() => setPlaying(true))
+      .catch((err) => console.debug(err));
   }, [track]);
   const next = () => setTrack(track === tracks.length - 1 ? 0 : track + 1);
   const prev = () => setTrack(track === 0 ? tracks.length - 1 : track - 1);
@@ -71,8 +75,8 @@ const MusicVisualizer = () => {
   const mute = () => {
     audioRef.current!.muted = !muted;
     if (volume === 0 && muted) {
-      setVolume(1);
-      audioRef.current!.volume = 1;
+      setVolume(0.25);
+      audioRef.current!.volume = 0.25;
     }
     setMuted(!muted);
   };
