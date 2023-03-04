@@ -10,27 +10,33 @@ const MyApp: AppType = ({ Component, pageProps }) => (
       <meta name="title" content="About Andres" />
       <meta
         name="description"
-        content="Personal site about Anders Rodriguez Michel"
+        content="Personal website about Anders Rodriguez Michel"
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://aboutandres.vercel.app/" />
       <meta property="og:title" content="About Andres" />
       <meta
         property="og:description"
-        content="Personal site about Anders Rodriguez Michel"
+        content="Personal website about Anders Rodriguez Michel"
       />
-      <meta property="og:image" content="profile.jpg" />
+      <meta
+        property="og:image"
+        content="https://aboutandres.vercel.app/profile.jpg"
+      />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://aboutandres.vercel.app/" />
       <meta property="twitter:title" content="About Andres" />
       <meta
         property="twitter:description"
-        content="Personal site about Anders Rodriguez Michel"
+        content="Personal website about Anders Rodriguez Michel"
       />
-      <meta property="twitter:image" content="profile.jpg" />
+      <meta
+        property="twitter:image"
+        content="https://aboutandres.vercel.app/profile.jpg"
+      />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className="">
+    <main>
       <Component {...pageProps} />
     </main>
     <NavBar />
