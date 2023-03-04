@@ -130,7 +130,7 @@ const MusicVisualizer = () => {
         </div>
         <div className="flex">
           <button
-            className="fill-white hover:fill-[#00b6f0]"
+            className="fill-white hover:fill-LightBlue"
             onClick={prev}
             onKeyDown={disable}
             title="Previous (p)"
@@ -140,7 +140,7 @@ const MusicVisualizer = () => {
             </svg>
           </button>
           <button
-            className="fill-white hover:fill-[#00b6f0]"
+            className="fill-white hover:fill-LightBlue"
             onClick={play}
             onKeyDown={disable}
             title="Play/Pause (space)"
@@ -154,7 +154,7 @@ const MusicVisualizer = () => {
             </svg>
           </button>
           <button
-            className="rotate-180 fill-white hover:fill-[#00b6f0]"
+            className="rotate-180 fill-white hover:fill-LightBlue"
             onClick={next}
             onKeyDown={disable}
             title="Next (n)"
@@ -181,7 +181,7 @@ const MusicVisualizer = () => {
             }}
           />
           <button
-            className="mx-2 fill-white stroke-white stroke-[4] hover:fill-[#00b6f0] hover:stroke-[#00b6f0]"
+            className="mx-2 fill-white stroke-white stroke-[4] hover:fill-LightBlue hover:stroke-LightBlue"
             onClick={mute}
             onKeyDown={disable}
             title="Mute (m)"
