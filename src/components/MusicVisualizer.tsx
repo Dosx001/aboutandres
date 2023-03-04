@@ -30,7 +30,7 @@ const MusicVisualizer = () => {
     canvas.width = canvas.parentElement!.clientWidth;
     canvas.height = window.innerHeight;
     const analyserNode = audioContext.createAnalyser();
-    analyserNode.fftSize = 256;
+    analyserNode.fftSize = 512;
     const audio = audioRef.current!;
     audio.volume = volume;
     audioContext.createMediaElementSource(audio).connect(analyserNode);
@@ -43,7 +43,7 @@ const MusicVisualizer = () => {
       ctx.fillStyle = "pink";
       for (let i = 0; i < frequencyData.length; i++) {
         const barHeight = frequencyData[i]!;
-        ctx.fillRect(i * 8, canvas.height - barHeight, 7, barHeight);
+        ctx.fillRect(i * 7, canvas.height - barHeight, 6, barHeight);
       }
     };
     renderFrame();
