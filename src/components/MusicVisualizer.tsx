@@ -1,4 +1,4 @@
-import type { KeyboardEvent } from "react";
+import type { KeyboardEvent as KeyEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 
@@ -71,7 +71,7 @@ const MusicVisualizer = () => {
       : audioRef.current!.play().catch((err) => console.debug(err));
     setPlaying(!playing);
   };
-  const disable = (ev: KeyboardEvent) => ev.preventDefault();
+  const disable = (ev: KeyEvent) => ev.preventDefault();
   const mute = () => {
     audioRef.current!.muted = !muted;
     if (volume === 0 && muted) {
@@ -111,7 +111,7 @@ const MusicVisualizer = () => {
   useHotkeys("left", left);
   useHotkeys("right", right);
   useHotkeys("space", play);
-  const arrow = (ev: KeyboardEvent) => {
+  const arrow = (ev: KeyEvent) => {
     ev.preventDefault();
     document.dispatchEvent(new KeyboardEvent("keydown", { key: ev.key }));
   };
