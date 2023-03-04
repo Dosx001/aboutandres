@@ -19,7 +19,7 @@ const MyApp: AppType = ({ Component, pageProps }) => (
         property="og:description"
         content="Personal site about Anders Rodriguez Michel"
       />
-      <meta property="og:image" content="./profile.png" />
+      <meta property="og:image" content="./profile.jpg" />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://aboutandres.vercel.app/" />
       <meta property="twitter:title" content="About Andres" />
@@ -27,7 +27,7 @@ const MyApp: AppType = ({ Component, pageProps }) => (
         property="twitter:description"
         content="Personal site about Anders Rodriguez Michel"
       />
-      <meta property="twitter:image" content="./profile.png" />
+      <meta property="twitter:image" content="./profile.jpg" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main className="">
