@@ -7,14 +7,27 @@ const MyApp: AppType = ({ Component, pageProps }) => (
   <>
     <Head>
       <title>About Andres</title>
+      <meta name="title" content="About Andres" />
       <meta
         name="description"
         content="Personal site about Anders Rodriguez Michel"
       />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://aboutandres.vercel.app/" />
+      <meta property="og:title" content="About Andres" />
       <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        property="og:description"
+        content="Personal site about Anders Rodriguez Michel"
       />
+      <meta property="og:image" content="./profile.png" />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://aboutandres.vercel.app/" />
+      <meta property="twitter:title" content="About Andres" />
+      <meta
+        property="twitter:description"
+        content="Personal site about Anders Rodriguez Michel"
+      />
+      <meta property="twitter:image" content="./profile.png" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main className="">
