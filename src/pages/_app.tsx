@@ -7,6 +7,10 @@ const MyApp: AppType = ({ Component, pageProps }) => (
   <>
     <Head>
       <title>About Andres</title>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      />
       <meta name="title" content="About Andres" />
       <meta
         name="description"
