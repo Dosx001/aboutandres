@@ -4,16 +4,24 @@ import Image from "next/image";
 const Work = () => {
   const jobs = [
     {
+      company: "NASA Ames Research Center",
+      positon: "Systems Developer",
+      location: "San Jose, CA",
+      start: "April 2023",
+      end: "Present",
+      logo: "nasa",
+    },
+    {
       company: "BAE Systems",
       positon: "Software Engineer",
       location: "San Jose, CA",
       start: "Jan 2022",
-      end: "Present",
+      end: "Spet 2022",
       logo: "bae",
     },
     {
       company: "BEACON",
-      positon: "Laboratory Assistant",
+      positon: "Research Assistant",
       location: "San Luis Obispo, CA",
       start: "Jun 2017",
       end: "Aug 2020",
