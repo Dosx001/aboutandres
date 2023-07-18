@@ -49,7 +49,7 @@ const Work = () => {
         >
           Work Experience
         </motion.h1>
-        <div className="relative mt-1 flex h-[80vh] justify-center overflow-y-auto">
+        <div className="relative mt-1 flex h-[80vh] justify-center overflow-y-auto rounded bg-gray-500/40 shadow shadow-black">
           <table>
             {jobs.map((job, i) => (
               <tr key={job.company}>
@@ -83,8 +83,8 @@ const Work = () => {
                   transition={{ delay: i * 0.2 }}
                 >
                   <h2 className="text-2xl">{job.company}</h2>
-                  <div className="text-black">{job.positon}</div>
-                  <div className="text-black">{job.location}</div>
+                  <div className="">{job.positon}</div>
+                  <div className="">{job.location}</div>
                 </motion.td>
               </tr>
             ))}
