@@ -41,6 +41,8 @@ const MusicVisualizer = () => {
       analyserNode.getByteFrequencyData(frequencyData);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "pink";
+      ctx.shadowColor = "black";
+      ctx.shadowBlur = 2;
       for (let i = 0; i < frequencyData.length; i++) {
         const barHeight = frequencyData[i]!;
         ctx.fillRect(i * 7, canvas.height - barHeight, 6, barHeight);
