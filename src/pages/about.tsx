@@ -104,7 +104,7 @@ const About = () => {
                   <path d="M16 0h-14v24h20v-18l-6-6zm0 3l3 3h-3v-3zm-12 19v-20h10v6h6v14h-16z" />
                   <path
                     stroke="white"
-                    stroke-width="7%"
+                    strokeWidth="7%"
                     d="m6 12h12m-12 3h12m-12 3h12"
                   />
                 </svg>
