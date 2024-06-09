@@ -84,8 +84,8 @@ const Project = ({ name }: { name: string }) => {
           {github(name)}
           <ImgSlider
             imgs={[
-              "https://camo.githubusercontent.com/52dc99d82fcba309ab2e1dfa6c4d3a0f348618e42c487946f6a8d1a05836a278/68747470733a2f2f692e696d6775722e636f6d2f38357741386e692e706e673f31",
-              "https://camo.githubusercontent.com/054c047b9443464b217f0af185673f3c75957d4b19c517020401167c182b1bcb/68747470733a2f2f692e696d6775722e636f6d2f695842433162692e706e673f31",
+              "https://camo.githubusercontent.com/05edd44229ab31ae84f9f9ef568dad9b9884ee2a2b57b61dc1849f5df472ab72/68747470733a2f2f692e696d6775722e636f6d2f526b6e4a5348472e676966",
+              "https://camo.githubusercontent.com/2bc8cb47f01213c7f8e4f0768955df0cc6ed8e5a860cdb91a0aaa5b98dc6cdea/68747470733a2f2f692e696d6775722e636f6d2f38357741386e692e706e673f31",
             ]}
           />
         </>,
@@ -102,7 +102,7 @@ const Project = ({ name }: { name: string }) => {
           {github(name)}
           <ImgSlider
             imgs={[
-              "https://addons.mozilla.org/user-media/previews/full/277/277780.png",
+              "https://addons.mozilla.org/user-media/previews/full/293/293184.png",
               "https://addons.mozilla.org/user-media/previews/full/277/277522.png",
               "https://addons.mozilla.org/user-media/previews/full/277/277617.png",
               "https://addons.mozilla.org/user-media/previews/full/277/277616.png",
