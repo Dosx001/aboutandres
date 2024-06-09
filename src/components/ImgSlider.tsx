@@ -60,7 +60,7 @@ const ImgSlider = ({ imgs }: { imgs: string[] }) => {
                     className="mx-auto max-h-[55vh] shadow-box"
                   />
                 </motion.div>
-              )
+              ),
           )}
         </AnimatePresence>
       </div>

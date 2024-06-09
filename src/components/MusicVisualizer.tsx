@@ -126,7 +126,7 @@ const MusicVisualizer = () => {
         onTimeUpdate={() => setCurrentTime(audioRef.current!.currentTime)}
       />
       <canvas ref={canvasRef} />
-      <div className="rounded-b bg-[#2e2e2e] py-1 px-2 shadow shadow-black">
+      <div className="rounded-b bg-[#2e2e2e] px-2 py-1 shadow shadow-black">
         <div>
           Track {track + 1}/{tracks.length} : {tracks[track]!}
         </div>

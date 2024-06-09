@@ -72,7 +72,7 @@ const Project = ({ name }: { name: string }) => {
               "projects/season.png",
             ]}
           />
-        </>
+        </>,
       );
     case "GitPrompt":
       return res(
@@ -88,7 +88,7 @@ const Project = ({ name }: { name: string }) => {
               "https://camo.githubusercontent.com/054c047b9443464b217f0af185673f3c75957d4b19c517020401167c182b1bcb/68747470733a2f2f692e696d6775722e636f6d2f695842433162692e706e673f31",
             ]}
           />
-        </>
+        </>,
       );
     case "YouTubeUtils":
       return res(
@@ -109,7 +109,7 @@ const Project = ({ name }: { name: string }) => {
               "https://addons.mozilla.org/user-media/previews/full/277/277520.png",
             ]}
           />
-        </>
+        </>,
       );
     case "mouselessV2":
       return res(
@@ -123,7 +123,7 @@ const Project = ({ name }: { name: string }) => {
               "https://addons.mozilla.org/user-media/previews/full/279/279071.png",
             ]}
           />
-        </>
+        </>,
       );
     case "Manual Code Injecter":
       return res(
@@ -138,7 +138,7 @@ const Project = ({ name }: { name: string }) => {
               "https://addons.mozilla.org/user-media/previews/full/276/276253.png",
             ]}
           />
-        </>
+        </>,
       );
     case "vim-template":
       return res(
@@ -151,7 +151,7 @@ const Project = ({ name }: { name: string }) => {
           <div>Plug &#34;Dosx001/vim-template&#34;</div>
           <div>use &#34;Dosx001/vim-template&#34;</div>
           {github(name)}
-        </>
+        </>,
       );
     case "QuickShot":
       return res(
@@ -165,7 +165,7 @@ const Project = ({ name }: { name: string }) => {
               "https://addons.mozilla.org/user-media/previews/full/275/275932.png",
             ]}
           />
-        </>
+        </>,
       );
     case "cmp-commit":
       return res(
@@ -183,7 +183,7 @@ const Project = ({ name }: { name: string }) => {
             </tr>
           </table>
           {github(name)}
-        </>
+        </>,
       );
     case "statusline.vim":
       return res(
@@ -193,7 +193,7 @@ const Project = ({ name }: { name: string }) => {
           <div>Plug &#34;Dosx001/statusline.vim&#34;</div>
           <div>use &#34;Dosx001/statusline.vim&#34;</div>
           {github(name)}
-        </>
+        </>,
       );
   }
 };

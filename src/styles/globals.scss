@@ -50,8 +50,13 @@
   }
 }
 .textshadow {
-  text-shadow: #000 0 0 5px, #000 0 0 5px, #000 0 0 5px, #000 0 0 5px,
-    #000 0 0 5px, #000 0 0 5px;
+  text-shadow:
+    #000 0 0 5px,
+    #000 0 0 5px,
+    #000 0 0 5px,
+    #000 0 0 5px,
+    #000 0 0 5px,
+    #000 0 0 5px;
 }
 .color {
   animation: color 8s linear infinite;
@@ -89,18 +94,30 @@ $mint: #65ff78;
 }
 @keyframes ripple {
   from {
-    box-shadow: 0 0 0 0 rgba($mint, 0.3), 0 0 0 1rem rgba($mint, 0.3),
-      0 0 0 3rem rgba($mint, 0.3), 0 0 0 6rem rgba($mint, 0.3),
-      0 0 0 9rem rgba($mint, 0.3), 0 0 0 12rem rgba($mint, 0.3),
-      0 0 0 15rem rgba($mint, 0.3), 0 0 0 18rem rgba($mint, 0.3),
-      0 0 0 21rem rgba($mint, 0.3), 0 0 0 24rem rgba($mint, 0.3);
+    box-shadow:
+      0 0 0 0 rgba($mint, 0.3),
+      0 0 0 1rem rgba($mint, 0.3),
+      0 0 0 3rem rgba($mint, 0.3),
+      0 0 0 6rem rgba($mint, 0.3),
+      0 0 0 9rem rgba($mint, 0.3),
+      0 0 0 12rem rgba($mint, 0.3),
+      0 0 0 15rem rgba($mint, 0.3),
+      0 0 0 18rem rgba($mint, 0.3),
+      0 0 0 21rem rgba($mint, 0.3),
+      0 0 0 24rem rgba($mint, 0.3);
   }
   to {
-    box-shadow: 0 0 0 1rem rgba($mint, 0.3), 0 0 0 3rem rgba($mint, 0.3),
-      0 0 0 6rem rgba($mint, 0.3), 0 0 0 9rem rgba($mint, 0.3),
-      0 0 0 12rem rgba($mint, 0.3), 0 0 0 15rem rgba($mint, 0.3),
-      0 0 0 18rem rgba($mint, 0.3), 0 0 0 21rem rgba($mint, 0.3),
-      0 0 0 24rem rgba($mint, 0.3), 0 0 0 27rem rgba($mint, 0);
+    box-shadow:
+      0 0 0 1rem rgba($mint, 0.3),
+      0 0 0 3rem rgba($mint, 0.3),
+      0 0 0 6rem rgba($mint, 0.3),
+      0 0 0 9rem rgba($mint, 0.3),
+      0 0 0 12rem rgba($mint, 0.3),
+      0 0 0 15rem rgba($mint, 0.3),
+      0 0 0 18rem rgba($mint, 0.3),
+      0 0 0 21rem rgba($mint, 0.3),
+      0 0 0 24rem rgba($mint, 0.3),
+      0 0 0 27rem rgba($mint, 0);
   }
 }
 @each $color in red, orange, yellow, green, blue, indigo, violet {
