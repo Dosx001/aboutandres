@@ -156,13 +156,16 @@ const Project = ({ name }: { name: string }) => {
     case "QuickShot":
       return res(
         <>
-          <div>Quickly navigate between URLs using hotkeys.</div>
+          <div>
+            Quickly navigate between URLs using hotkeys, and switch between
+            tabs/windows by fuzzy searching tabs across all windows.
+          </div>
           {firefox("quickshot")}
           {github(name)}
           <ImgSlider
             imgs={[
-              "https://addons.mozilla.org/user-media/previews/full/275/275865.png",
-              "https://addons.mozilla.org/user-media/previews/full/275/275932.png",
+              "https://addons.mozilla.org/user-media/previews/full/300/300044.png",
+              "https://addons.mozilla.org/user-media/previews/full/300/300043.png",
             ]}
           />
         </>,

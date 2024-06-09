@@ -9,9 +9,9 @@ const Projects = () => {
     "GitPrompt",
     "YouTubeUtils",
     "mouselessV2",
+    "QuickShot",
     "Manual Code Injecter",
     "vim-template",
-    "QuickShot",
     "cmp-commit",
     "statusline.vim",
   ];
