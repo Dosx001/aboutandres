@@ -41,7 +41,7 @@ const Project = ({ name }: { name: string }) => {
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0, opacity: 0, transition: { duration: 0.1 } }}
+        exit={{ scale: 0, opacity: 0, transition: { duration: 0.25 } }}
         transition={{ duration: 1 }}
         key={name}
         className="project"
