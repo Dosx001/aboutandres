@@ -198,6 +198,17 @@ const Project = ({ name }: { name: string }) => {
           {github(name)}
         </>,
       );
+    case "Bullseye":
+      return res(
+        <>
+          <div>Control mouse cursor using your keyboard.</div>
+          <h2>Installation</h2>
+          <div>paru -S bullseye</div>
+          <div>yay -S bullseye</div>
+          {github(name)}
+          <ImgSlider imgs={["https://i.imgur.com/knQBD4H.gif"]} />
+        </>,
+      );
   }
 };
 

@@ -9,6 +9,7 @@ const Projects = () => {
     "GitPrompt",
     "YouTubeUtils",
     "mouselessV2",
+    "Bullseye",
     "QuickShot",
     "Manual Code Injecter",
     "vim-template",
