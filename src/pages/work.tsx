@@ -16,7 +16,7 @@ const Work = () => {
       positon: "Software Engineer",
       location: "San Jose, CA",
       start: "Jan 2022",
-      end: "Spet 2022",
+      end: "Sept 2022",
       logo: "bae",
     },
     {
