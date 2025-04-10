@@ -7,7 +7,7 @@ const Work = () => {
       company: "NASA Ames Research Center",
       positon: "Systems Developer",
       location: "San Jose, CA",
-      start: "April 2023",
+      start: "Apr 2023",
       end: "Present",
       logo: "nasa",
     },
