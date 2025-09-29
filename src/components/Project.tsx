@@ -84,8 +84,8 @@ const Project = ({ name }: { name: string }) => {
           {github(name)}
           <ImgSlider
             imgs={[
-              "https://camo.githubusercontent.com/05edd44229ab31ae84f9f9ef568dad9b9884ee2a2b57b61dc1849f5df472ab72/68747470733a2f2f692e696d6775722e636f6d2f526b6e4a5348472e676966",
-              "https://camo.githubusercontent.com/2bc8cb47f01213c7f8e4f0768955df0cc6ed8e5a860cdb91a0aaa5b98dc6cdea/68747470733a2f2f692e696d6775722e636f6d2f38357741386e692e706e673f31",
+              "https://camo.githubusercontent.com/e8cc788743cb8dcc2ccb54c34629f79848dda805b245ceb4ad01ae572dc35f9f/68747470733a2f2f692e696d6775722e636f6d2f526b6e4a5348472e676966",
+              "https://camo.githubusercontent.com/4547896fa059f1d52c77194629ceadfae9b312d4217fc3bfccb76b317903b20c/68747470733a2f2f692e696d6775722e636f6d2f38357741386e692e706e673f31",
             ]}
           />
         </>,
