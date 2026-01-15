@@ -42,7 +42,7 @@ const Cube = () => {
           <Image
             className="mx-auto p-1"
             loader={({ src, width }) => `${src}?w=${width}`}
-            src="https://camo.githubusercontent.com/a1bec070fa4ac971babd1fa31d98b058717795755d4cd0e50458f0c083ebe5e2/68747470733a2f2f6769746875622d726561646d652d73746174732d646f73783030312e76657263656c2e6170702f6170692f3f757365726e616d653d446f737830303126636f756e745f707269766174653d7472756526696e636c7564655f616c6c5f636f6d6d6974733d747275652673686f775f69636f6e733d74727565267469746c655f636f6c6f723d6666662669636f6e5f636f6c6f723d30306537666626746578745f636f6c6f723d3966396639662662675f636f6c6f723d313531353135"
+            src="https://github-readme-stats-dosx001.vercel.app/api/?username=Dosx001&count_private=true&include_all_commits=true&show_icons=true&title_color=fff&icon_color=00e7ff&text_color=9f9f9f&bg_color=151515&"
             alt="GitHub stats"
             width={400}
             height={200}
@@ -50,7 +50,7 @@ const Cube = () => {
           <Image
             className="mx-auto max-h-52 p-1"
             loader={({ src, width }) => `${src}?w=${width}`}
-            src="https://camo.githubusercontent.com/1c5c088f689485ccfc9bb9e1149e4ee4b0d0ba4a43118809a4f7c47ec24b657b/68747470733a2f2f6769746875622d726561646d652d73746174732d646f73783030312e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d446f7378303031266c616e67735f636f756e743d3130266c61796f75743d636f6d70616374267469746c655f636f6c6f723d66666626746578745f636f6c6f723d3030653766662662675f636f6c6f723d313531353135"
+            src="https://github-readme-stats-dosx001.vercel.app/api/top-langs/?username=Dosx001&langs_count=10&layout=compact&title_color=fff&text_color=00e7ff&bg_color=151515&"
             alt="Top Languages"
             width={400}
             height={200}
