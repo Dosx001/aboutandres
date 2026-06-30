@@ -65,7 +65,7 @@ const Cube = () => {
           <Image
             className="p-1"
             loader={({ src, width }) => `${src}?w=${width}`}
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Archlinux-logo-standard-version.png/2560px-Archlinux-logo-standard-version.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Archlinux-logo-standard-version.svg/1920px-Archlinux-logo-standard-version.svg.png"
             alt="Arch Linux logo"
             width={400}
             height={400}

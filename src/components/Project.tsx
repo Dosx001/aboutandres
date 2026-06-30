@@ -84,8 +84,10 @@ const Project = ({ name }: { name: string }) => {
           {github(name)}
           <ImgSlider
             imgs={[
-              "https://camo.githubusercontent.com/e8cc788743cb8dcc2ccb54c34629f79848dda805b245ceb4ad01ae572dc35f9f/68747470733a2f2f692e696d6775722e636f6d2f526b6e4a5348472e676966",
-              "https://camo.githubusercontent.com/4547896fa059f1d52c77194629ceadfae9b312d4217fc3bfccb76b317903b20c/68747470733a2f2f692e696d6775722e636f6d2f38357741386e692e706e673f31",
+              "https://camo.githubusercontent.com/2bdf7f35b72796eb5a3416f7eb236ceb20088fbc0f5652462da57b5ed31903ea/68747470733a2f2f692e696d6775722e636f6d2f38357741386e692e706e673f31",
+              "https://camo.githubusercontent.com/ab564ab25aec1afd9018740c90bd698a55cdd27293b5157cfe77297b5f91bfe8/68747470733a2f2f692e696d6775722e636f6d2f797258414b51352e706e673f31",
+              "https://camo.githubusercontent.com/a039e875867b8eb4a1a7fe9d0a295f8064ba68dbdbe0010e371d315a2ac622bd/68747470733a2f2f692e696d6775722e636f6d2f695842433162692e706e673f31",
+              "https://camo.githubusercontent.com/325ec33111cbe5e5f35d53262e41642a8732be41e73e8e286ed62715d599c420/68747470733a2f2f692e696d6775722e636f6d2f526b6e4a5348472e676966",
             ]}
           />
         </>,
